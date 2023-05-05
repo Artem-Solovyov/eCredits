@@ -61,6 +61,14 @@
     }
 }
 
+//  Dark mainBlock
+html.dark {
+    .main-block {
+        background: $mainDarkColor;
+        color: #fff;
+    }
+}
+
 // statistics
 
 .statistics {
@@ -102,6 +110,14 @@
         font-weight: 700;
         line-height: 1.4;
         color: #212121;
+    }
+}
+//  Dark statistic
+html.dark {
+    .statistics-item {
+        &__title {
+            color: #fff;
+        }
     }
 }
 
@@ -268,7 +284,11 @@
 }
 
 // Use
-
+html.dark {
+    .use {
+        color: $mainDarkColor;
+    }
+}
 .use {
     @include adaptive-value("padding-top", 60, 30, 1);
     @include adaptive-value("padding-bottom", 60, 30, 1);

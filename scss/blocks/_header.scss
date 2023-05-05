@@ -15,7 +15,16 @@
         height: 50px;
         position: relative;
     }
-
+    &__menu {
+        display: flex;
+        align-items: center;
+        column-gap: rem(24);
+    }
+    &__theme {
+        background: url("../../src/images/darkWhite/01.svg") 0 0 / 100% no-repeat;
+        width: rem(24);
+        height: rem(24);
+    }
     &__logo {
     }
 
@@ -44,5 +53,21 @@
         font-size: rem(18);
         line-height: 1.4;
         color: $mainDarkColor;
+    }
+}
+
+html.light {
+}
+html.dark {
+    .header {
+        background: rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid #000;
+        color: #fff;
+    }
+
+    .nav {
+        &__link {
+            color: #fff;
+        }
     }
 }

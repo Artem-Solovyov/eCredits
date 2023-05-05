@@ -152,6 +152,7 @@ body {
   font-size: 1rem;
   color: #1c1f25;
   overflow-x: hidden;
+  transition: all 0.3 s ease;
 }
 
 .wrapper {
@@ -165,6 +166,11 @@ body {
 
 .bg {
   position: relative;
+}
+
+html.dark body {
+  background: #1c1f25;
+  color: #fff;
 }
 
 ._ibg {
@@ -238,6 +244,18 @@ body {
   }
 }
 
+html.dark .btn_2 {
+  box-shadow: 2px 1000px 1px #1c1f25 inset;
+}
+@media (any-hover: hover) {
+  html.dark .btn_2:hover {
+    box-shadow: none;
+  }
+  html.dark .btn_2:hover span {
+    color: #fff;
+  }
+}
+
 .header {
   background: rgba(255, 255, 255, 0.5);
   border-bottom: 1px solid #e3e6ec;
@@ -256,6 +274,16 @@ body {
   height: 50px;
   position: relative;
 }
+.header__menu {
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+}
+.header__theme {
+  background: url("../../src/images/darkWhite/01.svg") 0 0/100% no-repeat;
+  width: 1.5rem;
+  height: 1.5rem;
+}
 .nav__list {
   display: flex;
   align-items: center;
@@ -268,6 +296,15 @@ body {
   font-size: 1.125rem;
   line-height: 1.4;
   color: #1c1f25;
+}
+
+html.dark .header {
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #000;
+  color: #fff;
+}
+html.dark .nav__link {
+  color: #fff;
 }
 
 .main-block {
@@ -334,6 +371,11 @@ body {
   column-gap: 2rem;
   pointer-events: all;
 }
+html.dark .main-block {
+  background: #1c1f25;
+  color: #fff;
+}
+
 .statistics {
   padding-top: 5.125rem;
   padding-bottom: 3.75rem;
@@ -390,6 +432,10 @@ body {
   font-weight: 700;
   line-height: 1.4;
   color: #212121;
+}
+
+html.dark .statistics-item__title {
+  color: #fff;
 }
 
 .wealth {
@@ -567,6 +613,10 @@ body {
     opacity: 1;
     visibility: visible;
   }
+}
+
+html.dark .use {
+  color: #1c1f25;
 }
 
 .use {

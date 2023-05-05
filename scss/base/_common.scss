@@ -72,3 +72,22 @@
         }
     }
 }
+
+html.dark {
+    .btn {
+        &_1 {
+        }
+
+        &_2 {
+            box-shadow: 2px 1000px 1px $mainDarkColor inset;
+            @media (any-hover: hover) {
+                &:hover {
+                    box-shadow: none;
+                    span {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

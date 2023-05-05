@@ -24,6 +24,7 @@ body {
     font-size: rem(16);
     color: $mainDarkColor;
     overflow-x: hidden;
+    transition: all 0.3 s ease;
 }
 .wrapper {
     background-image: url(../../src/images/bg/Noise.png);
@@ -35,4 +36,11 @@ body {
 }
 .bg {
     position: relative;
+}
+
+html.dark {
+    body {
+        background: $mainDarkColor;
+        color: #fff;
+    }
 }
