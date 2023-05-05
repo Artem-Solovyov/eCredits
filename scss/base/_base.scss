@@ -1,0 +1,38 @@
+// Settings
+$minWidth: 320;
+$maxWidthContainer: 1170;
+$containerPadding: 30;
+
+$tablet: em(991.98);
+$mobile: em(767.98);
+$mobileSmall: em(479.98);
+
+//colors
+$mainDarkColor: #1c1f25;
+$textDarcColor: #212121;
+
+[class*="__container"] {
+    max-width: rem($maxWidthContainer);
+    box-sizing: content-box;
+    margin: 0 auto;
+    padding: 0 rem(math.div($containerPadding, 2));
+}
+
+body {
+    font-family: "Abro Sans";
+    font-weight: normal;
+    font-size: rem(16);
+    color: $mainDarkColor;
+    overflow-x: hidden;
+}
+.wrapper {
+    background-image: url(../../src/images/bg/Noise.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow-x: hidden;
+}
+.bg {
+    position: relative;
+}

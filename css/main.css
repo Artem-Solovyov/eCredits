@@ -1,0 +1,758 @@
+@font-face {
+  font-family: "Cascadia Code";
+  src: url("../src/fonts/CascadiaCodePL-Light.eot");
+  src: url("../src/fonts/CascadiaCodePL-Light.eot?#iefix") format("embedded-opentype"), url("../src/fonts/CascadiaCodePL-Light.woff2") format("woff2"), url("../src/fonts/CascadiaCodePL-Light.woff") format("woff"), url("../src/fonts/CascadiaCodePL-Light.ttf") format("truetype"), url("../src/fonts/CascadiaCodePL-Light.svg#CascadiaCodePL-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cascadia Code";
+  src: url("../src/fonts/CascadiaCodePL-Bold.eot");
+  src: url("../src/fonts/CascadiaCodePL-Bold.eot?#iefix") format("embedded-opentype"), url("../src/fonts/CascadiaCodePL-Bold.woff2") format("woff2"), url("../src/fonts/CascadiaCodePL-Bold.woff") format("woff"), url("../src/fonts/CascadiaCodePL-Bold.ttf") format("truetype"), url("../src/fonts/CascadiaCodePL-Bold.svg#CascadiaCodePL-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Abro Sans";
+  src: url("../src/fonts/AbroSans-Regular.eot");
+  src: url("../src/fonts/AbroSans-Regular.eot?#iefix") format("embedded-opentype"), url("../src/fonts/AbroSans-Regular.woff2") format("woff2"), url("../src/fonts/AbroSans-Regular.woff") format("woff"), url("../src/fonts/AbroSans-Regular.ttf") format("truetype"), url("../src/fonts/AbroSans-Regular.svg#AbroSans-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Abro Sans";
+  src: url("../src/fonts/AbroSans-Bold.eot");
+  src: url("../src/fonts/AbroSans-Bold.eot?#iefix") format("embedded-opentype"), url("../src/fonts/AbroSans-Bold.woff2") format("woff2"), url("../src/fonts/AbroSans-Bold.woff") format("woff"), url("../src/fonts/AbroSans-Bold.ttf") format("truetype"), url("../src/fonts/AbroSans-Bold.svg#AbroSans-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+/* reset start*/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+/* Common */
+aside,
+nav,
+footer,
+header,
+section,
+main {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+/* Base settings */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1;
+}
+
+button,
+input {
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+  font-family: inherit;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: inherit;
+}
+
+/* :focus,
+:active {
+  outline: none;
+} */
+/* a:focus,
+a:active {
+  outline: none;
+} */
+/* Links */
+a,
+a:link,
+a:visited {
+  /* color: inherit; */
+  text-decoration: none;
+  /* display: inline-block; */
+}
+
+a:hover {
+  /* color: inherit; */
+  text-decoration: none;
+}
+
+/* Images */
+img {
+  vertical-align: top;
+  max-width: 100%;
+}
+
+/* font  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Animation */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* reset end*/
+[class*=__container] {
+  max-width: 73.125rem;
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+body {
+  font-family: "Abro Sans";
+  font-weight: normal;
+  font-size: 1rem;
+  color: #1c1f25;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  background-image: url(../../src/images/bg/Noise.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.bg {
+  position: relative;
+}
+
+._ibg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+._ibg img {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.btn {
+  position: relative;
+  padding: 0.75rem 1.5rem;
+  font-family: "Cascadia Code";
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  z-index: 2;
+}
+.btn_1 {
+  color: #fff;
+  background: linear-gradient(273.89deg, rgba(118, 75, 193, 0.616) 24.92%, rgba(57, 114, 237, 0.52) 48.27%, rgba(50, 212, 239, 0.576) 100%), #5b5b5b;
+}
+.btn_2 {
+  position: relative;
+  padding: 0.625rem 1.375rem;
+  border: solid 2px transparent;
+  background: linear-gradient(273.89deg, rgba(118, 75, 193, 0.616) 24.92%, rgba(57, 114, 237, 0.52) 48.27%, rgba(50, 212, 239, 0.576) 100%), #5b5b5b;
+  background-origin: border-box;
+  background-clip: content-box, border-box, text;
+  box-shadow: 2px 1000px 1px #fff inset;
+  transition: box-shadow 0.4s ease;
+}
+.btn_2 span {
+  background: linear-gradient(273.89deg, rgba(118, 75, 193, 0.616) 24.92%, rgba(57, 114, 237, 0.52) 48.27%, rgba(50, 212, 239, 0.576) 100%), #5b5b5b;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: color 0.4s ease;
+}
+.btn_2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../src/images/bg/Noise.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+.btn_2_black {
+  box-shadow: 2px 1000px 1px #1c1f25 inset;
+}
+@media (any-hover: hover) {
+  .btn_2:hover {
+    box-shadow: none;
+  }
+  .btn_2:hover span {
+    color: #fff;
+  }
+}
+
+.header {
+  background: rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid #e3e6ec;
+  padding: 7px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  backdrop-filter: blur(6px);
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  position: relative;
+}
+.nav__list {
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.nav__link {
+  font-family: "Cascadia Code";
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  color: #1c1f25;
+}
+
+.main-block {
+  padding-top: 13.125rem;
+  padding-bottom: 5.125rem;
+}
+@media (max-width: 20em) {
+  .main-block {
+    padding-top: 6.25rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 73.125em) {
+  .main-block {
+    padding-top: calc(
+                6.25rem + 110 * ((100vw - 20rem) / 850)
+            );
+  }
+}
+@media (max-width: 20em) {
+  .main-block {
+    padding-bottom: 2.5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 73.125em) {
+  .main-block {
+    padding-bottom: calc(
+                2.5rem + 42 * ((100vw - 20rem) / 850)
+            );
+  }
+}
+.main-block__body {
+  max-width: 48.125rem;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+.main-block__text {
+  color: #6b519a;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.3em;
+}
+.main-block__text:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+.main-block__title {
+  font-size: 4.5rem;
+}
+.main-block__title:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.main-block__sub-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+.main-block__sub-title:not(:last-child) {
+  margin-bottom: 2.25rem;
+}
+.actions-main-block {
+  display: flex;
+  column-gap: 2rem;
+  pointer-events: all;
+}
+.statistics {
+  padding-top: 5.125rem;
+  padding-bottom: 3.75rem;
+}
+@media (max-width: 20em) {
+  .statistics {
+    padding-top: 2.5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 73.125em) {
+  .statistics {
+    padding-top: calc(
+                2.5rem + 42 * ((100vw - 20rem) / 850)
+            );
+  }
+}
+@media (max-width: 20em) {
+  .statistics {
+    padding-bottom: 2.5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 73.125em) {
+  .statistics {
+    padding-bottom: calc(
+                2.5rem + 20 * ((100vw - 20rem) / 850)
+            );
+  }
+}
+.statistics__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2rem;
+  flex-wrap: wrap;
+  row-gap: 1.25rem;
+}
+.statistics-item {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  column-gap: 1rem;
+  position: relative;
+  z-index: 2;
+}
+.statistics-item__count {
+  font-size: 2.25rem;
+}
+.statistics-item__count:not(:last-child) {
+  margin-bottom: 0.25rem;
+}
+.statistics-item__title {
+  font-family: "Cascadia Code";
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #212121;
+}
+
+.wealth {
+  position: relative;
+  background: #1c1f25;
+}
+.wealth__container {
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+}
+.wealth__container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -2.5rem;
+  width: 45%;
+  height: 100%;
+  background-image: url("../../src/images/wealth/01.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.wealth__body {
+  max-width: 36.25rem;
+  margin-right: 1.4375rem;
+}
+.wealth__title {
+  padding-top: 3.75rem;
+  max-width: 21.875rem;
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 20em) {
+  .wealth__title {
+    padding-top: 1.875rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 73.125em) {
+  .wealth__title {
+    padding-top: calc(
+                1.875rem + 30 * ((100vw - 20rem) / 850)
+            );
+  }
+}
+.wealth__title:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.wealth__title span {
+  color: #fff;
+  font-size: 2.25rem;
+}
+.wealth__img {
+  width: 1.25rem;
+  height: 1.4375rem;
+  margin-top: 0.375rem;
+}
+.wealth__text {
+  position: relative;
+  z-index: 2;
+  font-family: "Cascadia Code";
+  font-weight: 300;
+  line-height: 1.4;
+  font-size: 1rem;
+  color: #fff;
+}
+.wealth__text:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.wealth__actions {
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+  padding-bottom: 3.75rem;
+}
+@media (max-width: 20em) {
+  .wealth__actions {
+    padding-bottom: 1.875rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 73.125em) {
+  .wealth__actions {
+    padding-bottom: calc(
+                1.875rem + 30 * ((100vw - 20rem) / 850)
+            );
+  }
+}
+
+.why {
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
+}
+@media (max-width: 20em) {
+  .why {
+    padding-top: 1.875rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 73.125em) {
+  .why {
+    padding-top: calc(
+                1.875rem + 30 * ((100vw - 20rem) / 850)
+            );
+  }
+}
+@media (max-width: 20em) {
+  .why {
+    padding-bottom: 1.875rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 73.125em) {
+  .why {
+    padding-bottom: calc(
+                1.875rem + 30 * ((100vw - 20rem) / 850)
+            );
+  }
+}
+.why__title {
+  font-size: 2.25rem;
+  text-align: center;
+  padding-bottom: 1.5rem;
+}
+.why__items {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, minmax(min-content, 33.75rem));
+  grid-template-rows: repeat(2, auto);
+  column-gap: 2rem;
+  row-gap: 1rem;
+}
+.item-why {
+  position: relative;
+  padding: 1.5rem 1rem;
+  background: #ffffff;
+  border: 2px solid #e3e6ec;
+}
+.item-why::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.5s ease;
+}
+.item-why__header {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+.item-why__header:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.item-why__title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.2; /* 24/20 */
+}
+.item-why__text {
+  font-family: "Cascadia Code";
+  font-size: 1rem;
+  color: #212121;
+  line-height: 1.4;
+}
+@media (any-hover: hover) {
+  .item-why:hover {
+    border: 2px solid transparent;
+    background: linear-gradient(273.89deg, rgba(118, 75, 193, 0.616) 24.92%, rgba(57, 114, 237, 0.52) 48.27%, rgba(50, 212, 239, 0.576) 100%), #5b5b5b;
+    box-shadow: 2px 1000px 1px #fff inset;
+    z-index: 2;
+  }
+  .item-why:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.use {
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
+}
+@media (max-width: 20em) {
+  .use {
+    padding-top: 1.875rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 73.125em) {
+  .use {
+    padding-top: calc(
+                1.875rem + 30 * ((100vw - 20rem) / 850)
+            );
+  }
+}
+@media (max-width: 20em) {
+  .use {
+    padding-bottom: 1.875rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 73.125em) {
+  .use {
+    padding-bottom: calc(
+                1.875rem + 30 * ((100vw - 20rem) / 850)
+            );
+  }
+}
+.use__title {
+  font-size: 2.25rem;
+  margin-bottom: 1.5625rem;
+  text-align: center;
+}
+.use__body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10.625rem, 12.9375rem));
+  grid-template-rows: repeat(3, minmax(10.625rem, 12.9375rem));
+  grid-auto-flow: row;
+  gap: 2rem;
+  counter-reset: item;
+  justify-content: center;
+}
+.item-use {
+  position: relative;
+  background: #ffffff;
+  border: 2px solid #e3e6ec;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  border-bottom: 2px solid transparent;
+  background: linear-gradient(273.89deg, rgba(118, 75, 193, 0.616) 24.92%, rgba(57, 114, 237, 0.52) 48.27%, rgba(50, 212, 239, 0.576) 100%), #5b5b5b;
+  box-shadow: 2px 1000px 1px #fff inset;
+}
+.item-use__title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+.item-use__text {
+  font-family: "Cascadia Code";
+  line-height: 1.4;
+  font-size: 1rem;
+  position: absolute;
+  top: -rem(2);
+  height: 12.9375rem;
+  right: 0;
+  z-index: 2;
+  transform: translate(70%, 0);
+  opacity: 0;
+  visibility: hidden;
+  color: #212121;
+  background: #ffffff;
+  display: flex;
+  width: calc(200% + 74px);
+  padding-left: 1.25rem;
+  padding-right: 3.1875rem;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: border 0.4s ease;
+  border-bottom: 2px solid transparent;
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
+  background: linear-gradient(273.89deg, rgba(118, 75, 193, 0.616) 24.92%, rgba(57, 114, 237, 0.52) 48.27%, rgba(50, 212, 239, 0.576) 100%), #5b5b5b;
+  box-shadow: 2px 1000px 1px #fff inset;
+  transition: all 0.3s ease;
+}
+.item-use._active {
+  border: 2px solid transparent;
+}
+.item-use._active .item-use__text {
+  transform: translate(100%, 0);
+  opacity: 1;
+  visibility: visible;
+}
+.item-use._active:hover {
+  border: 2px solid transparent;
+}
+.item-use._active:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0%, -50%) rotate(180deg);
+}
+.item-use._active::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0%, -50%) rotate(180deg);
+}
+.item-use._active::before {
+  transform: translate(var(--widthBlocks), 0);
+  z-index: 5;
+  transition: transform 0.8s ease;
+}
+.item-use._left:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0%, -50%) rotate(-180deg);
+}
+.item-use._left:hover .item-use__title {
+  transform: translate(1.4375rem, 0);
+}
+.item-use._left .item-use__text {
+  transform: translate(-70%, 0);
+  top: -rem(2);
+  left: 0;
+  border-right: none;
+  border-left: 2px solid transparent;
+}
+.item-use._left .item-use::after {
+  transform: rotate(180deg);
+}
+.item-use._left::after {
+  transform: translate(150%, -50%) rotate(-180deg);
+  top: 50%;
+  left: 0.75rem;
+}
+.item-use._left._active .item-use__text {
+  transform: translate(-100%, 0);
+}
+.item-use._left._active::before {
+  transform: translate(var(--widthBlocksM), 0);
+}
+.item-use._left._active:hover::after {
+  transform: translate(0%, -50%) rotate(0deg);
+}
+.item-use::before {
+  content: "/" counter(item);
+  position: absolute;
+  padding: 1rem;
+  top: 0;
+  right: 0;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  letter-spacing: 0.3em;
+  counter-increment: item;
+  transition: transform 0.3s ease;
+}
+.item-use::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  width: 0.9375rem;
+  height: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-150%, -50%);
+  background-image: url("../../src/images/use/arrow.svg");
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+@media (any-hover: hover) {
+  .item-use:hover {
+    border: 2px solid transparent;
+  }
+  .item-use:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0%, -50%);
+  }
+}

@@ -1,0 +1,36 @@
+@function rem($px) {
+    $result: math.div($px, 16) + rem;
+    @return $result;
+}
+@function em($px, $px1: 16) {
+    $result: math.div($px, $px1) + em;
+    @return $result;
+}
+
+@mixin adaptive-value($property, $startSize, $minSize, $type: 1, $minWidth: 320) {
+    $addSize: $startSize - $minSize;
+
+    @if $type==1 {
+        // меньше контейнера
+        #{$property}: rem($startSize);
+        @media (max-width: #{em($minWidth)}) {
+            #{$property}: rem($minSize);
+        }
+        @media (min-width: #{em($minWidth)}) and (max-width: #{em($maxWidthContainer)}) {
+            #{$property}: calc(
+                #{rem($minSize)} + #{$addSize} * ((100vw - #{rem($minWidth)}) / #{$maxWidthContainer - $minWidth})
+            );
+        }
+    } @else if $type==2 {
+        // только если больше контейнера
+        #{$property}: rem($startSize);
+        @media (min-width: #{em($maxWidthContainer)}) {
+            #{$property}: calc(#{rem($minSize)} + #{$addSize} * ((100vw - rem(320)) / #{$maxWidthContainer - 320}));
+        }
+    } @else {
+        // всегда
+        #{$property}: calc(
+            #{rem($minSize)} + #{$addSize} * ((100vw - #{rem($minWidth)}) / #{$maxWidthContainer - $minWidth})
+        );
+    }
+}

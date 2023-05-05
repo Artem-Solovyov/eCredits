@@ -1,0 +1,48 @@
+.header {
+    background: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid #e3e6ec;
+    padding: 7px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    backdrop-filter: blur(6px);
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        position: relative;
+    }
+
+    &__logo {
+    }
+
+    &__nav {
+    }
+}
+
+.logo {
+    &__img {
+    }
+}
+.nav {
+    &__list {
+        display: flex;
+        align-items: center;
+        column-gap: rem(24);
+        flex-wrap: wrap;
+    }
+
+    &__item {
+    }
+
+    &__link {
+        font-family: "Cascadia Code";
+        font-weight: 300;
+        font-size: rem(18);
+        line-height: 1.4;
+        color: $mainDarkColor;
+    }
+}

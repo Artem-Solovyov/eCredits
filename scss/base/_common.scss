@@ -1,0 +1,74 @@
+.btn {
+    position: relative;
+    padding: rem(12) rem(24);
+    font-family: "Cascadia Code";
+    font-weight: 700;
+    font-size: rem(15);
+    line-height: 1.4;
+    z-index: 2;
+
+    &_1 {
+        color: #fff;
+        background: linear-gradient(
+                273.89deg,
+                rgba(118, 75, 193, 0.616) 24.92%,
+                rgba(57, 114, 237, 0.52) 48.27%,
+                rgba(50, 212, 239, 0.576) 100%
+            ),
+            #5b5b5b;
+    }
+
+    &_2 {
+        position: relative;
+        padding: rem(10) rem(22);
+        border: solid 2px transparent;
+        background: linear-gradient(
+                273.89deg,
+                rgba(118, 75, 193, 0.616) 24.92%,
+                rgba(57, 114, 237, 0.52) 48.27%,
+                rgba(50, 212, 239, 0.576) 100%
+            ),
+            #5b5b5b;
+        background-origin: border-box;
+        background-clip: content-box, border-box, text;
+        box-shadow: 2px 1000px 1px #fff inset;
+        transition: box-shadow 0.4s ease;
+        & span {
+            background: linear-gradient(
+                    273.89deg,
+                    rgba(118, 75, 193, 0.616) 24.92%,
+                    rgba(57, 114, 237, 0.52) 48.27%,
+                    rgba(50, 212, 239, 0.576) 100%
+                ),
+                #5b5b5b;
+            -webkit-background-clip: text;
+            color: transparent;
+            transition: color 0.4s ease;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(../../src/images/bg/Noise.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 2;
+        }
+        &_black {
+            box-shadow: 2px 1000px 1px #1c1f25 inset;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                box-shadow: none;
+                span {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

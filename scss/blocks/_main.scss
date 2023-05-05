@@ -1,0 +1,471 @@
+.page {
+    &__main-block {
+    }
+    &__statistics {
+    }
+    &__wealth {
+    }
+    &__why {
+    }
+    &__use {
+    }
+}
+.main-block {
+    @include adaptive-value("padding-top", 210, 100, 1);
+    @include adaptive-value("padding-bottom", 82, 40, 1);
+
+    &__container {
+    }
+    &__body {
+        max-width: rem(770);
+        position: relative;
+        z-index: 2;
+        pointer-events: none;
+    }
+    &__text {
+        color: #6b519a;
+        text-transform: uppercase;
+        font-size: rem(14);
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 0.3em;
+        &:not(:last-child) {
+            margin-bottom: rem(8);
+        }
+    }
+
+    &__title {
+        font-size: rem(72);
+        &:not(:last-child) {
+            margin-bottom: rem(24);
+        }
+    }
+
+    &__sub-title {
+        font-weight: 700;
+        font-size: rem(20);
+        line-height: 1.2;
+        &:not(:last-child) {
+            margin-bottom: rem(36);
+        }
+    }
+
+    &__actions {
+    }
+}
+.actions-main-block {
+    display: flex;
+    column-gap: rem(32);
+    pointer-events: all;
+    &__button {
+    }
+}
+
+// statistics
+
+.statistics {
+    @include adaptive-value("padding-top", 82, 40, 1);
+    @include adaptive-value("padding-bottom", 60, 40, 1);
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: rem(32);
+        flex-wrap: wrap;
+        row-gap: rem(20);
+    }
+
+    &__item {
+    }
+}
+.statistics-item {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    column-gap: rem(16);
+    position: relative;
+    z-index: 2;
+
+    &__body {
+    }
+
+    &__count {
+        font-size: rem(36);
+        &:not(:last-child) {
+            margin-bottom: rem(4);
+        }
+    }
+
+    &__title {
+        font-family: "Cascadia Code";
+        font-size: rem(14);
+        font-weight: 700;
+        line-height: 1.4;
+        color: #212121;
+    }
+}
+
+// wealth
+
+.wealth {
+    position: relative;
+    background: #1c1f25;
+    &__container {
+        display: flex;
+        flex-direction: row-reverse;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -2.5rem;
+            width: 45%;
+            height: 100%;
+            background-image: url("../../src/images/wealth/01.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__body {
+        max-width: rem(580);
+        margin-right: rem(23);
+    }
+
+    &__title {
+        @include adaptive-value("padding-top", 60, 30, 1);
+        max-width: rem(350);
+        position: relative;
+        z-index: 2;
+
+        &:not(:last-child) {
+            margin-bottom: rem(16);
+        }
+
+        span {
+            color: #fff;
+            font-size: rem(36);
+        }
+    }
+    &__img {
+        width: rem(20);
+        height: rem(23);
+        margin-top: rem(6);
+    }
+
+    &__text {
+        position: relative;
+        z-index: 2;
+        font-family: "Cascadia Code";
+        font-weight: 300;
+        line-height: 1.4;
+        font-size: rem(16);
+        color: #fff;
+        &:not(:last-child) {
+            margin-bottom: rem(24);
+        }
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        column-gap: rem(32);
+        @include adaptive-value("padding-bottom", 60, 30, 1);
+    }
+}
+.actions-wealth {
+    &__button {
+    }
+}
+
+// Why
+
+.why {
+    @include adaptive-value("padding-top", 60, 30, 1);
+    @include adaptive-value("padding-bottom", 60, 30, 1);
+
+    &__container {
+    }
+
+    &__title {
+        font-size: rem(36);
+        text-align: center;
+        padding-bottom: rem(24);
+    }
+
+    &__items {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(2, minmax(min-content, rem(540)));
+        grid-template-rows: repeat(2, auto);
+        column-gap: rem(32);
+        row-gap: rem(16);
+    }
+
+    &__item {
+    }
+}
+.item-why {
+    position: relative;
+    padding: rem(24) rem(16);
+    background: #ffffff;
+    border: 2px solid #e3e6ec;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.2);
+        transition: opacity 0.5s ease;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        column-gap: rem(16);
+        &:not(:last-child) {
+            margin-bottom: rem(16);
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: rem(20);
+        line-height: 1.2; /* 24/20 */
+    }
+
+    &__text {
+        font-family: "Cascadia Code";
+        font-size: rem(16);
+        color: #212121;
+        line-height: 1.4;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            border: 2px solid transparent;
+            background: linear-gradient(
+                    273.89deg,
+                    rgba(118, 75, 193, 0.616) 24.92%,
+                    rgba(57, 114, 237, 0.52) 48.27%,
+                    rgba(50, 212, 239, 0.576) 100%
+                ),
+                #5b5b5b;
+            box-shadow: 2px 1000px 1px #fff inset;
+            z-index: 2;
+            &::after {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+// Use
+
+.use {
+    @include adaptive-value("padding-top", 60, 30, 1);
+    @include adaptive-value("padding-bottom", 60, 30, 1);
+    &__container {
+    }
+    &__title {
+        font-size: rem(36);
+        margin-bottom: rem(25);
+        text-align: center;
+    }
+
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(rem(170), rem(207)));
+        grid-template-rows: repeat(3, minmax(rem(170), rem(207)));
+        grid-auto-flow: row;
+        gap: rem(32);
+        counter-reset: item;
+
+        justify-content: center;
+    }
+
+    &__item {
+    }
+}
+.item-use {
+    position: relative;
+    background: #ffffff;
+    border: 2px solid #e3e6ec;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: rem(16);
+
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border-bottom: 2px solid transparent;
+
+    background: linear-gradient(
+            273.89deg,
+            rgba(118, 75, 193, 0.616) 24.92%,
+            rgba(57, 114, 237, 0.52) 48.27%,
+            rgba(50, 212, 239, 0.576) 100%
+        ),
+        #5b5b5b;
+    box-shadow: 2px 1000px 1px #fff inset;
+    &__title {
+        font-weight: 700;
+        font-size: rem(20);
+        line-height: 1.2;
+        pointer-events: none;
+        transition: transform 0.3s ease;
+    }
+
+    &__text {
+        font-family: "Cascadia Code";
+        line-height: 1.4;
+        font-size: rem(16);
+        position: absolute;
+        top: -rem(2);
+        height: rem(207);
+        right: 0;
+        z-index: 2;
+
+        transform: translate(70%, 0);
+        opacity: 0;
+        visibility: hidden;
+
+        color: #212121;
+        background: #ffffff;
+
+        display: flex;
+        width: calc(200% + 74px);
+        padding-left: rem(20);
+        padding-right: rem(51);
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: border 0.4s ease;
+        border-bottom: 2px solid transparent;
+        border-top: 2px solid transparent;
+        border-right: 2px solid transparent;
+        background: linear-gradient(
+                273.89deg,
+                rgba(118, 75, 193, 0.616) 24.92%,
+                rgba(57, 114, 237, 0.52) 48.27%,
+                rgba(50, 212, 239, 0.576) 100%
+            ),
+            #5b5b5b;
+        box-shadow: 2px 1000px 1px #fff inset;
+        transition: all 0.3s ease;
+    }
+    &._active {
+        .item-use__text {
+            transform: translate(100%, 0);
+            opacity: 1;
+            visibility: visible;
+        }
+        &:hover {
+            border: 2px solid transparent;
+            &::after {
+                opacity: 1;
+                visibility: visible;
+                transform: translate(0%, -50%) rotate(180deg);
+            }
+        }
+        border: 2px solid transparent;
+        &::after {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(0%, -50%) rotate(180deg);
+        }
+        &::before {
+            transform: translate(var(--widthBlocks), 0);
+            z-index: 5;
+            transition: transform 0.8s ease;
+        }
+    }
+
+    &._left {
+        &:hover {
+            &::after {
+                opacity: 1;
+                visibility: visible;
+                transform: translate(0%, -50%) rotate(-180deg);
+            }
+            .item-use__title {
+                transform: translate(rem(23), 0);
+            }
+        }
+        .item-use__text {
+            transform: translate(-70%, 0);
+            top: -rem(2);
+            left: 0;
+            border-right: none;
+            border-left: 2px solid transparent;
+        }
+        .item-use::after {
+            transform: rotate(180deg);
+        }
+        &::after {
+            transform: translate(150%, -50%) rotate(-180deg);
+            top: 50%;
+            left: rem(12);
+        }
+    }
+
+    &._left._active {
+        .item-use__text {
+            transform: translate(-100%, 0);
+        }
+        &::before {
+            transform: translate(var(--widthBlocksM), 0);
+        }
+        &:hover {
+            &::after {
+                transform: translate(0%, -50%) rotate(0deg);
+            }
+        }
+    }
+    &::before {
+        content: "/" counter(item);
+        position: absolute;
+        padding: rem(16);
+        top: 0;
+        right: 0;
+        font-weight: 700;
+        font-size: rem(14);
+        line-height: 1.4;
+        letter-spacing: 0.3em;
+        counter-increment: item;
+        transition: transform 0.3s ease;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: rem(12);
+        width: rem(15);
+        height: rem(24);
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(-150%, -50%);
+        background-image: url("../../src/images/use/arrow.svg");
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            border: 2px solid transparent;
+
+            &::after {
+                opacity: 1;
+                visibility: visible;
+                transform: translate(0%, -50%);
+            }
+        }
+    }
+}
