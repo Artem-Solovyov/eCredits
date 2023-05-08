@@ -1,5 +1,5 @@
 if (document.querySelector(".wrapper").clientWidth > 768) {
-  // particlesJS.load("particles-js", "../json/particles.json", function () {});
+  particlesJS.load("particles-js", "../json/particles.json", function () {});
   // particlesJS.load("particles-js1", "../json/particles.json", function () {});
 }
 
