@@ -75,12 +75,17 @@ html.dark {
     @include adaptive-value("padding-top", 82, 40, 1);
     @include adaptive-value("padding-bottom", 60, 40, 1);
     &__container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        column-gap: rem(32);
-        flex-wrap: wrap;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // column-gap: rem(32);
+        // flex-wrap: wrap;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(rem(270), 1fr));
+        justify-items: start;
         row-gap: rem(20);
+        column-gap: rem(10);
     }
 
     &__item {
@@ -91,6 +96,7 @@ html.dark {
     flex-direction: row-reverse;
     align-items: center;
     column-gap: rem(16);
+
     position: relative;
     z-index: 2;
 
@@ -98,7 +104,8 @@ html.dark {
     }
 
     &__count {
-        font-size: rem(36);
+        // font-size: rem(36);
+        @include adaptive-value("font-size", 32, 28, 1);
         &:not(:last-child) {
             margin-bottom: rem(4);
         }

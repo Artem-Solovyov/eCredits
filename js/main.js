@@ -1,5 +1,5 @@
 if (document.querySelector(".wrapper").clientWidth > 768) {
-  particlesJS.load("particles-js", "../json/particles.json", function () {});
+  // particlesJS.load("particles-js", "../json/particles.json", function () {});
   // particlesJS.load("particles-js1", "../json/particles.json", function () {});
 }
 
@@ -89,10 +89,7 @@ if (blocks.length > 0) {
     let textWidth = blockWidth * 2 + 74;
     const pos = block.getBoundingClientRect().left;
     const distance = width - (pos - res + blockWidth - 30);
-    console.log(width);
-    console.log(pos);
-    console.log(distance);
-    console.log(textWidth);
+
     if (distance < textWidth) {
       block.classList.add("_left");
     }

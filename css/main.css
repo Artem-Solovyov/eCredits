@@ -405,12 +405,11 @@ html.dark .main-block {
   }
 }
 .statistics__container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 2rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16.875rem, 1fr));
+  justify-items: start;
   row-gap: 1.25rem;
+  column-gap: 0.625rem;
 }
 .statistics-item {
   display: flex;
@@ -421,7 +420,19 @@ html.dark .main-block {
   z-index: 2;
 }
 .statistics-item__count {
-  font-size: 2.25rem;
+  font-size: 2rem;
+}
+@media (max-width: 20em) {
+  .statistics-item__count {
+    font-size: 1.75rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 73.125em) {
+  .statistics-item__count {
+    font-size: calc(
+                1.75rem + 4 * ((100vw - 20rem) / 850)
+            );
+  }
 }
 .statistics-item__count:not(:last-child) {
   margin-bottom: 0.25rem;

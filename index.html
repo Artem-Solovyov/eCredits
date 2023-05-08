@@ -65,7 +65,7 @@
             <div class="statistics__container">
               <article class="statistics__item statistics-item">
                 <div class="statistics-item__body">
-                  <div class="statistics-item__count">5 seconds</div>
+                  <div class="statistics-item__count block-time">5 seconds</div>
                   <h2 class="statistics-item__title">Average block time</h2>
                 </div>
                 <img
@@ -85,7 +85,9 @@
               </article>
               <article class="statistics__item statistics-item">
                 <div class="statistics-item__body">
-                  <div class="statistics-item__count">12,462,328</div>
+                  <div class="statistics-item__count total-blocks">
+                    12,562,328
+                  </div>
                   <h2 class="statistics-item__title">Total blocks</h2>
                 </div>
                 <img
@@ -95,7 +97,9 @@
               </article>
               <article class="statistics__item statistics-item">
                 <div class="statistics-item__body">
-                  <div class="statistics-item__count">225,619</div>
+                  <div class="statistics-item__count total-addresses">
+                    225,619
+                  </div>
                   <h2 class="statistics-item__title">
                     Active wallet addresses
                   </h2>
@@ -349,8 +353,9 @@
         </section>
       </main>
     </div>
-    <script src="./js/lib/particles.js"></script>
     <script src="./js/lib/darkWhite.js"></script>
+    <script src="./js/lib/ws.js"></script>
+    <script src="./js/lib/particles.js"></script>
     <script src="./js/lib/spollers.js"></script>
     <script src="./js/main.js"></script>
   </body>
