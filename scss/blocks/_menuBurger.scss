@@ -1,0 +1,52 @@
+.icon-menu {
+    @media (max-width: em(768)) {
+        margin: rem(5);
+        z-index: 100;
+        display: block;
+        position: relative;
+        @include adaptive-value("width", 36, 24, 1, 320, 768);
+        @include adaptive-value("height", 24, 16, 1, 320, 768);
+        cursor: pointer;
+
+        &::before,
+        &::after,
+        & span {
+            content: "";
+            left: 0;
+            position: absolute;
+            @include adaptive-value("height", 4, 3, 1, 320, 768);
+
+            width: 100%;
+            transition: all 0.3s ease 0s;
+            background-color: $mainDarkColor;
+            html.dark & {
+                background-color: #fff;
+            }
+        }
+        &::before,
+        &::after {
+            content: "";
+        }
+        &::before {
+            top: 0;
+        }
+        &::after {
+            bottom: 0;
+        }
+        & span {
+            top: 50%;
+            transform: scale(1) translate(0px, -50%);
+        }
+        &._active span {
+            transform: scale(0);
+        }
+        &._active::before {
+            top: 50%;
+            transform: rotate(-45deg) translate(0px, 0%);
+        }
+        &._active::after {
+            top: 50%;
+            transform: rotate(45deg) translate(0px, 0%);
+        }
+    }
+}

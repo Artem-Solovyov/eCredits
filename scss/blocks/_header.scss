@@ -9,38 +9,55 @@
     z-index: 5;
     backdrop-filter: blur(6px);
     &__container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 50px;
+        @media (min-width: em(768)) {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            align-items: center;
+        }
+        @media (max-width: em(768)) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        @include adaptive-value("height", 50, 34, 1, 320, 768);
         position: relative;
     }
-    &__menu {
-        display: flex;
-        align-items: center;
-        column-gap: rem(24);
-    }
+
     &__theme {
-        background: url("../../src/images/darkWhite/01.svg") 0 0 / 100% no-repeat;
+        justify-self: end;
+        display: block;
+        background: url("../../src/icons/header/moon.svg") 0 0 / 100% no-repeat;
         width: rem(24);
         height: rem(24);
+        html.dark & {
+            background: url("../../src/icons/header/Sun.svg") 0 0 / 100% no-repeat;
+        }
     }
     &__logo {
+        padding-right: rem(14);
     }
 
     &__nav {
+        justify-self: center;
     }
 }
 
 .logo {
-    &__img {
+    &__link {
+        display: block;
+        background: url("../../src/icons/logo/logo.svg") 0 0 / 100% no-repeat;
+        @include adaptive-value("width", 153, 87, 1, 320, 768);
+        @include adaptive-value("height", 50, 28, 1, 320, 768);
+        html.dark & {
+            background: url("../../src/icons/logo/darkLogo.svg") 0 0 / 100% no-repeat;
+        }
     }
 }
 .nav {
     &__list {
         display: flex;
         align-items: center;
-        column-gap: rem(24);
+        column-gap: rem(32);
         flex-wrap: wrap;
     }
 
@@ -50,9 +67,14 @@
     &__link {
         font-family: "Cascadia Code";
         font-weight: 300;
-        font-size: rem(18);
+        font-size: rem(16);
         line-height: 1.4;
         color: $mainDarkColor;
+    }
+}
+.menu {
+    &__body {
+        display: none;
     }
 }
 

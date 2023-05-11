@@ -1,9 +1,9 @@
 // Settings
 $minWidth: 320;
 $maxWidthContainer: 1170;
-$containerPadding: 30;
+$containerPadding: 110;
 
-$tablet: em(991.98);
+$tablet: em(767.98);
 $mobile: em(767.98);
 $mobileSmall: em(479.98);
 
@@ -15,7 +15,16 @@ $textDarcColor: #212121;
     max-width: rem($maxWidthContainer);
     box-sizing: content-box;
     margin: 0 auto;
-    padding: 0 rem(math.div($containerPadding, 2));
+    @include adaptive-value("padding-left", 25, 10, 1, 320, 768);
+    @include adaptive-value("padding-right", 25, 10, 1, 320, 768);
+    @media (min-width: $tablet) {
+        padding: 0 rem(math.div($containerPadding, 2));
+    }
+
+    @media (max-width: em(1280)) and (min-width: em(767.98)) {
+        @include adaptive-value("padding-left", 55, 25, 1, 768);
+        @include adaptive-value("padding-right", 55, 25, 1, 768);
+    }
 }
 
 body {
@@ -24,7 +33,7 @@ body {
     font-size: rem(16);
     color: $mainDarkColor;
     overflow-x: hidden;
-    transition: all 0.3 s ease;
+    transition: all 0.4s ease;
 }
 .wrapper {
     background-image: url(../../src/images/bg/Noise.png);

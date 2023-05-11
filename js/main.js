@@ -1,5 +1,5 @@
 if (document.querySelector(".wrapper").clientWidth > 768) {
-  particlesJS.load("particles-js", "../json/particles.json", function () {});
+  // particlesJS.load("particles-js", "../json/particles.json", function () {});
   // particlesJS.load("particles-js1", "../json/particles.json", function () {});
 }
 
@@ -44,6 +44,59 @@ function ibg() {
   }
 }
 ibg();
+
+//============Menu burger start=========================================================
+
+const iconMenu = document.querySelector(".menu__icon");
+const menuBody = document.querySelector(".menu__body");
+if (iconMenu) {
+  iconMenu.addEventListener("click", function (e) {
+    document.body.classList.toggle("_lock"); //stop scroll
+    iconMenu.classList.toggle("_active");
+    menuBody.classList.toggle("_active");
+    e.preventDefault();
+  });
+}
+
+//============Menu burger end===========================================================
+
+//============Scroll onClick start========================================================
+
+// HTML <a dataset-goto=".class"/>'
+
+const menuLinks = document.querySelectorAll(".menu__link[data-goto]");
+if (menuLinks.length > 0) {
+  console.log("Hello");
+  menuLinks.forEach((menuLink) => {
+    menuLink.addEventListener("click", onMenuLinkClick);
+  });
+
+  function onMenuLinkClick(e) {
+    const menuLink = e.target;
+    if (
+      menuLink.dataset.goto &&
+      document.querySelector(menuLink.dataset.goto)
+    ) {
+      const gotoBlock = document.querySelector(menuLink.dataset.goto);
+      const gotoBlockValue =
+        gotoBlock.getBoundingClientRect().top +
+        scrollY -
+        document.querySelector(".header").offsetHeight;
+
+      if (iconMenu.classList.contains("_active")) {
+        document.body.classList.remove("_lock"); //stop scroll
+        iconMenu.classList.remove("_active");
+        menuBody.classList.remove("_active");
+      }
+      window.scrollTo({
+        top: gotoBlockValue,
+        behavior: "smooth",
+      });
+      e.preventDefault();
+    }
+  }
+}
+//============Scroll onClick end========================================================
 
 // Animations page-why
 

@@ -1,3 +1,5 @@
+$containerWidth: 1280;
+
 @function rem($px) {
     $result: math.div($px, 16) + rem;
     @return $result;
@@ -7,30 +9,33 @@
     @return $result;
 }
 
-@mixin adaptive-value($property, $startSize, $minSize, $type: 1, $minWidth: 320) {
+@mixin adaptive-value($property, $startSize, $minSize, $type: 1, $minWidthS: 320, $maxWidthS: 0) {
     $addSize: $startSize - $minSize;
+    @if $maxWidthS==0 {
+        $maxWidthS: $containerWidth;
+    }
 
     @if $type==1 {
         // меньше контейнера
         #{$property}: rem($startSize);
-        @media (max-width: #{em($minWidth)}) {
+        @media (max-width: #{em($minWidthS)}) {
             #{$property}: rem($minSize);
         }
-        @media (min-width: #{em($minWidth)}) and (max-width: #{em($maxWidthContainer)}) {
+        @media (min-width: #{em($minWidthS)}) and (max-width: #{em($maxWidthS)}) {
             #{$property}: calc(
-                #{rem($minSize)} + #{$addSize} * ((100vw - #{rem($minWidth)}) / #{$maxWidthContainer - $minWidth})
+                #{rem($minSize)} + #{$addSize} * ((100vw - #{rem($minWidthS)}) / #{$maxWidthS - $minWidthS})
             );
         }
     } @else if $type==2 {
         // только если больше контейнера
         #{$property}: rem($startSize);
-        @media (min-width: #{em($maxWidthContainer)}) {
-            #{$property}: calc(#{rem($minSize)} + #{$addSize} * ((100vw - rem(320)) / #{$maxWidthContainer - 320}));
+        @media (min-width: #{em($maxWidthS)}) {
+            #{$property}: calc(#{rem($minSize)} + #{$addSize} * ((100vw - rem(320)) / #{$maxWidthS - 320}));
         }
     } @else {
         // всегда
         #{$property}: calc(
-            #{rem($minSize)} + #{$addSize} * ((100vw - #{rem($minWidth)}) / #{$maxWidthContainer - $minWidth})
+            #{rem($minSize)} + #{$addSize} * ((100vw - #{rem($minWidthS)}) / #{$maxWidthS - $minWidthS})
         );
     }
 }

@@ -1,4 +1,4 @@
-window.addEventListener("load", windowLoad);
+window.addEventListener("DOMContentLoaded", windowLoad);
 
 function windowLoad() {
   const htmlBlock = document.documentElement;

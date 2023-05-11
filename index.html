@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="css/main.css" />
+
     <title>eCredits</title>
   </head>
   <body>
@@ -12,33 +14,31 @@
       <header class="header">
         <div class="header__container">
           <div class="header__logo logo">
-            <a href="" class="logo__link">
-              <img
-                src="./src/icons/logo/logo.svg"
-                alt="eCredits"
-                class="logo__img"
-              />
-            </a>
+            <a href="" class="logo__link"> </a>
           </div>
-          <div class="header__menu">
-            <nav class="header__nav nav">
-              <ul class="nav__list">
-                <li class="nav__item">
-                  <a href="" class="nav__link">Community</a>
-                </li>
-                <li class="nav__item">
-                  <a href="" class="nav__link">Developers</a>
-                </li>
-                <li class="nav__item">
-                  <a href="" class="nav__link">Whitepaper</a>
-                </li>
-              </ul>
-            </nav>
-            <button class="header__theme"></button>
-          </div>
+          <nav data-da=".menu__body,768" class="header__nav nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="" class="nav__link">Community</a>
+              </li>
+              <li class="nav__item">
+                <a href="" class="nav__link">Developers</a>
+              </li>
+              <li class="nav__item">
+                <a href="" class="nav__link">Whitepaper</a>
+              </li>
+            </ul>
+          </nav>
+          <button data-da=".menu__body,768" class="header__theme"></button>
+          <nav hidden class="menu">
+            <button type="button" class="menu__icon icon-menu">
+              <span></span>
+            </button>
+            <div class="menu__body"></div>
+          </nav>
         </div>
       </header>
-      <main class="page">
+      <!-- <main class="page">
         <div id="particles-js" class="bg">
           <section class="page__main-block main-block">
             <div class="main-block__container">
@@ -351,11 +351,13 @@
             </div>
           </div>
         </section>
-      </main>
+      </main> -->
     </div>
+
+    <!-- <script src="./js/lib/ws.js"></script> -->
     <script src="./js/lib/darkWhite.js"></script>
-    <script src="./js/lib/ws.js"></script>
     <script src="./js/lib/particles.js"></script>
+    <script src="./js/lib/ad.js"></script>
     <script src="./js/lib/spollers.js"></script>
     <script src="./js/main.js"></script>
   </body>
