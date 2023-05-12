@@ -1,0 +1,96 @@
+.statistics {
+    @include adaptive-value("padding-bottom", 60, 40, 1, 320, 768);
+    @include adaptive-value("padding-top", 60, 22, 1, 480, 768);
+    @media (min-width: $tablet) {
+        @include adaptive-value("padding-top", 82, 60, 1, 768);
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        row-gap: rem(24);
+        @include adaptive-value("column-gap", 32, 10, 1, 991);
+
+        @media (max-width: em(920)) {
+            @include adaptive-value("max-width", 540, 400, 1, 320, 920);
+
+            @include adaptive-value("column-gap", 71, 54, 1, 320, 920);
+            column-gap: rem(71);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: start;
+        }
+    }
+
+    &__item {
+    }
+}
+.statistics-item {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    column-gap: rem(16);
+
+    position: relative;
+    z-index: 2;
+    @media (max-width: em(480)) {
+        flex-direction: column-reverse;
+        row-gap: rem(8);
+        align-items: flex-start;
+    }
+
+    &__body {
+    }
+
+    &__count {
+        @include adaptive-value("font-size", 32, 24, 1, 768);
+        @media (max-width: $tablet) {
+            @include adaptive-value("font-size", 24, 20, 1, 320, 768);
+        }
+        &:not(:last-child) {
+            margin-bottom: rem(4);
+        }
+    }
+
+    &__title {
+        font-family: "Cascadia Code";
+        @include adaptive-value("font-size", 14, 10, 1, 768);
+
+        font-weight: 700;
+        line-height: 1.4;
+        color: #212121;
+    }
+    &__image {
+        background: #1c1f25;
+        @include adaptive-value("width", 64, 48, 1, 768);
+        @include adaptive-value("height", 64, 48, 1, 768);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        html.dark & {
+            background: #fff;
+            &::before {
+                color: #000;
+            }
+        }
+
+        &::before {
+            color: #fff;
+            @include adaptive-value("font-size", 39, 29, 1, 768);
+        }
+        &_height::before {
+            color: #fff;
+            @include adaptive-value("font-size", 48, 36, 1, 768);
+        }
+    }
+}
+//  Dark statistic
+html.dark {
+    .statistics-item {
+        &__title {
+            color: #fff;
+        }
+    }
+}

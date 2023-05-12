@@ -30,15 +30,15 @@
             </ul>
           </nav>
           <button data-da=".menu__body,768" class="header__theme"></button>
-          <nav hidden class="menu">
+          <div hidden class="menu">
             <button type="button" class="menu__icon icon-menu">
               <span></span>
             </button>
             <div class="menu__body"></div>
-          </nav>
+          </div>
         </div>
       </header>
-      <!-- <main class="page">
+      <main class="page">
         <div id="particles-js" class="bg">
           <section class="page__main-block main-block">
             <div class="main-block__container">
@@ -68,20 +68,16 @@
                   <div class="statistics-item__count block-time">5 seconds</div>
                   <h2 class="statistics-item__title">Average block time</h2>
                 </div>
-                <img
-                  src="./src/images/statistics/timeBlock.svg"
-                  alt="Block Time"
-                />
+                <div class="statistics-item__image _icon-timeBlock"></div>
               </article>
               <article class="statistics__item statistics-item">
                 <div class="statistics-item__body">
                   <div class="statistics-item__count">636,413</div>
                   <h2 class="statistics-item__title">Total transactions</h2>
                 </div>
-                <img
-                  src="./src/images/statistics/transaction.svg"
-                  alt="Block Time"
-                />
+                <div
+                  class="statistics-item__image statistics-item__image_height _icon-transBlock"
+                ></div>
               </article>
               <article class="statistics__item statistics-item">
                 <div class="statistics-item__body">
@@ -90,10 +86,9 @@
                   </div>
                   <h2 class="statistics-item__title">Total blocks</h2>
                 </div>
-                <img
-                  src="./src/images/statistics/totalBlocks.svg"
-                  alt="Block Time"
-                />
+                <div
+                  class="statistics-item__image statistics-item__image_height _icon-totalBlocks"
+                ></div>
               </article>
               <article class="statistics__item statistics-item">
                 <div class="statistics-item__body">
@@ -104,15 +99,12 @@
                     Active wallet addresses
                   </h2>
                 </div>
-                <img
-                  src="./src/images/statistics/adresses.svg"
-                  alt="Block Time"
-                />
+                <div class="statistics-item__image _icon-addressBlock"></div>
               </article>
             </div>
           </div>
 
-          <section id="particles-js1" class="page__wealth wealth">
+          <!-- <section id="particles-js1" class="page__wealth wealth">
             <div class="wealth__container">
               <div class="wealth__body">
                 <h2 class="wealth__title">
@@ -155,9 +147,9 @@
                 </div>
               </div>
             </div>
-          </section>
+          </section> -->
         </div>
-        <section class="page__why why">
+        <!-- <section class="page__why why">
           <div class="why__container">
             <h2 class="why__title">Why should you join?</h2>
             <div class="why__items">
@@ -350,8 +342,8 @@
               </article>
             </div>
           </div>
-        </section>
-      </main> -->
+        </section> -->
+      </main>
     </div>
 
     <!-- <script src="./js/lib/ws.js"></script> -->

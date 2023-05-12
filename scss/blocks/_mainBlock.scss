@@ -1,0 +1,77 @@
+.main-block {
+    @include adaptive-value("padding-top", 116, 77, 1, 320, 768);
+    @include adaptive-value("padding-bottom", 60, 22, 1, 480, 768);
+    @media (min-width: $tablet) {
+        @include adaptive-value("padding-bottom", 82, 60, 1, 768);
+        @include adaptive-value("padding-top", 210, 116, 1, 768);
+    }
+
+    &__container {
+    }
+    &__body {
+        @include adaptive-value("max-width", 770, 530, 1, 768);
+        position: relative;
+        z-index: 2;
+        pointer-events: none;
+    }
+    &__text {
+        display: inline-block;
+        background: linear-gradient(
+                273.89deg,
+                rgba(118, 75, 193, 0.616) 24.92%,
+                rgba(57, 114, 237, 0.52) 48.27%,
+                rgba(50, 212, 239, 0.576) 100%
+            ),
+            #5b5b5b;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-transform: uppercase;
+        @include adaptive-value("font-size", 14, 10, 1, 768);
+        font-weight: 700;
+        line-height: 1.4;
+        letter-spacing: 0.3em;
+        &:not(:last-child) {
+            @include adaptive-value("margin-bottom", 8, 4, 1, 320, 768);
+        }
+    }
+
+    &__title {
+        @include adaptive-value("font-size", 72, 30, 1);
+        font-weight: 400;
+        &:not(:last-child) {
+            @include adaptive-value("margin-bottom", 24, 16, 1, 320, 768);
+        }
+    }
+
+    &__sub-title {
+        font-weight: 700;
+        @include adaptive-value("font-size", 20, 16, 1, 768);
+        font-size: rem(20);
+        line-height: 1.2;
+        &:not(:last-child) {
+            @include adaptive-value("margin-bottom", 36, 24, 1);
+        }
+    }
+
+    &__actions {
+    }
+}
+.actions-main-block {
+    display: inline-flex;
+    column-gap: rem(32);
+    pointer-events: all;
+    @media (max-width: $mobileSmall) {
+        flex-direction: column;
+        row-gap: rem(16);
+    }
+    &__button {
+        flex: 0 0 content;
+    }
+}
+
+//  Dark mainBlock
+html.dark {
+    .main-block {
+    }
+}

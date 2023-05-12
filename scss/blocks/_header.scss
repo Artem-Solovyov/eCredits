@@ -1,17 +1,30 @@
 .header {
-    background: rgba(255, 255, 255, 0.5);
-    border-bottom: 1px solid #e3e6ec;
     padding: 7px 0;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 5;
-    backdrop-filter: blur(6px);
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+        -webkit-backdrop-filter: blur(6px);
+        backdrop-filter: blur(6px);
+    }
+
+    background: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid #e3e6ec;
+    html.dark & {
+        @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+        }
+        background: rgba(28, 31, 37, 0.5);
+        border-bottom: 1px solid #3a3a3a;
+    }
     &__container {
         @media (min-width: em(768)) {
             display: grid;
             grid-template-columns: 1fr 3fr 1fr;
+
             align-items: center;
         }
         @media (max-width: em(768)) {
@@ -19,18 +32,50 @@
             align-items: center;
             justify-content: space-between;
         }
-        @include adaptive-value("height", 50, 34, 1, 320, 768);
+        @include adaptive-value("min-height", 50, 34, 1, 320, 768);
         position: relative;
     }
 
     &__theme {
         justify-self: end;
         display: block;
-        background: url("../../src/icons/header/moon.svg") 0 0 / 100% no-repeat;
-        width: rem(24);
-        height: rem(24);
-        html.dark & {
-            background: url("../../src/icons/header/Sun.svg") 0 0 / 100% no-repeat;
+        transform: translate(0, 7%);
+        @media (any-hover: hover) {
+            &:hover {
+                background: linear-gradient(
+                        273.89deg,
+                        rgba(118, 75, 193, 0.616) 24.92%,
+                        rgba(57, 114, 237, 0.52) 48.27%,
+                        rgba(50, 212, 239, 0.576) 100%
+                    ),
+                    #5b5b5b;
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+        }
+        &::before {
+            content: "\e901";
+            font-size: rem(24);
+            font-family: "icons" !important;
+            speak: never;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+
+            /* Better Font Rendering =========== */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            html.dark & {
+                content: "\e902";
+                @media (any-hover: hover) {
+                    &:hover {
+                        color: transparent;
+                    }
+                }
+            }
         }
     }
     &__logo {
@@ -70,26 +115,17 @@
         font-size: rem(16);
         line-height: 1.4;
         color: $mainDarkColor;
+
+        html.dark & {
+            color: #fff;
+        }
     }
 }
 .menu {
+    @media (max-width: em(768)) {
+        display: block;
+    }
     &__body {
         display: none;
-    }
-}
-
-html.light {
-}
-html.dark {
-    .header {
-        background: rgba(255, 255, 255, 0.1);
-        border-bottom: 1px solid #000;
-        color: #fff;
-    }
-
-    .nav {
-        &__link {
-            color: #fff;
-        }
     }
 }
