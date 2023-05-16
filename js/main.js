@@ -1,4 +1,4 @@
-if (document.querySelector(".wrapper").clientWidth > 768) {
+if (document.querySelector(".wrapper").clientWidth > 319) {
   // particlesJS.load("particles-js", "../json/particles.json", function () {});
   // particlesJS.load("particles-js1", "../json/particles.json", function () {});
 }
@@ -31,6 +31,17 @@ const isMobile = {
     );
   },
 };
+if (!isMobile.any()) {
+  document.body.classList.contains("_touch")
+    ? document.body.classList.remove("_touch")
+    : null;
+  document.body.classList.add("_pc");
+} else {
+  document.body.classList.contains("_pc")
+    ? document.body.classList.remove("_pc")
+    : null;
+  document.body.classList.add("_touch");
+}
 
 // ibg image
 
@@ -59,6 +70,38 @@ if (iconMenu) {
 }
 
 //============Menu burger end===========================================================
+
+//============fetch start=========================================================
+async function loadData() {
+  const server = "https://explorer-api.ecredits.com/stats";
+  const response = await fetch(server, {
+    method: "GET",
+  });
+  const responseResult = await response.json();
+  if (response.ok) {
+    const averageBlockTime = responseResult.averageBlockTime;
+    const totalTransactions = responseResult.totalTransactions;
+    const totalBlocks = responseResult.totalBlocks;
+    const walletAddresses = responseResult.walletAddresses;
+
+    document.querySelector(".total-addresses").innerHTML =
+      new Intl.NumberFormat("en").format(walletAddresses);
+    document.querySelector(".total-blocks").innerHTML = new Intl.NumberFormat(
+      "en"
+    ).format(totalBlocks);
+    document.querySelector(".block-time").innerHTML =
+      new Intl.NumberFormat("en").format(averageBlockTime) + " " + "seconds";
+    document.querySelector(".total-transaction").innerHTML =
+      new Intl.NumberFormat("en").format(totalTransactions);
+  }
+}
+loadData();
+
+const interval = setInterval(loadData, 5000);
+window.addEventListener("unload", function () {
+  clearInterval(interval);
+});
+//============fetch end=========================================================
 
 //============Scroll onClick start========================================================
 
@@ -112,39 +155,57 @@ window.onload = function () {
         .addEventListener("mouseleave", removeClass);
     }
   }
+  document.body.classList.remove("._touch");
 };
 function removeClass(e) {
   if (e.target.closest(".item-use")) {
     e.target.classList.remove("_active");
   }
 }
+if (window.innerWidth > 1279) {
+  const blocks = document.querySelectorAll(".item-use");
+  const bodyBlocks = document.querySelector(".use__body");
+  const width = bodyBlocks.offsetWidth;
+  const windowWidth = window.innerWidth;
+  const res = (windowWidth - width) / 2;
 
-const blocks = document.querySelectorAll(".item-use");
-const bodyBlocks = document.querySelector(".use__body");
-const width = bodyBlocks.offsetWidth;
-const windowWidth = window.innerWidth;
-const res = (windowWidth - width) / 2;
+  const textBlock = document.querySelector(".item-use__text");
+  const blockArrow = document.querySelector(".item-use");
+  const widthBlockArrow = blockArrow.offsetWidth;
+  const widthBlocks = textBlock.offsetWidth;
+  document.body.style.setProperty("--widthBlocks", `${widthBlocks}px`);
+  document.body.style.setProperty(
+    "--widthBlocksM",
+    `-${widthBlocks + widthBlockArrow - 65}px`
+  );
 
-const textBlock = document.querySelector(".item-use__text");
-const blockArrow = document.querySelector(".item-use");
-const widthBlockArrow = blockArrow.offsetWidth;
-const widthBlocks = textBlock.offsetWidth;
-document.body.style.setProperty("--widthBlocks", `${widthBlocks}px`);
-document.body.style.setProperty(
-  "--widthBlocksM",
-  `-${widthBlocks + widthBlockArrow - 65}px`
-);
+  if (blocks.length > 0) {
+    blocks.forEach((block) => {
+      block.classList.remove("_left");
+      let blockWidth = block.offsetWidth;
+      let textWidth = blockWidth * 2 + 74;
+      const pos = block.getBoundingClientRect().left;
+      const distance = width - (pos - res + blockWidth - 30);
 
-if (blocks.length > 0) {
-  blocks.forEach((block) => {
-    block.classList.remove("_left");
-    let blockWidth = block.offsetWidth;
-    let textWidth = blockWidth * 2 + 74;
-    const pos = block.getBoundingClientRect().left;
-    const distance = width - (pos - res + blockWidth - 30);
+      if (distance < textWidth) {
+        block.classList.add("_left");
+      }
+    });
+  }
+} else if (window.innerWidth > 680) {
+  const blocks = document.querySelectorAll(".item-use");
+  const bodyBlocks = document.querySelector(".use__body");
+  const width = bodyBlocks.offsetWidth;
+  const windowWidth = window.innerWidth;
+  const res = (windowWidth - width) / 2;
 
-    if (distance < textWidth) {
-      block.classList.add("_left");
-    }
-  });
+  const textBlock = document.querySelector(".item-use__text");
+  const blockArrow = document.querySelector(".item-use");
+  const widthBlockArrow = blockArrow.offsetWidth;
+  const widthBlocks = textBlock.offsetWidth;
+  document.body.style.setProperty("--widthBlocks", `${widthBlocks}px`);
+  document.body.style.setProperty(
+    "--widthBlocksM",
+    `-${widthBlocks + widthBlockArrow - 65}px`
+  );
 }

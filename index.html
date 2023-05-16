@@ -16,7 +16,7 @@
           <div class="header__logo logo">
             <a href="" class="logo__link"> </a>
           </div>
-          <nav data-da=".menu__body,768" class="header__nav nav">
+          <nav data-da=".menu__body,768,first" class="header__nav nav">
             <ul class="nav__list">
               <li class="nav__item">
                 <a href="" class="nav__link">Community</a>
@@ -65,14 +65,16 @@
             <div class="statistics__container">
               <article class="statistics__item statistics-item">
                 <div class="statistics-item__body">
-                  <div class="statistics-item__count block-time">5 seconds</div>
+                  <div class="statistics-item__count block-time">5</div>
                   <h2 class="statistics-item__title">Average block time</h2>
                 </div>
                 <div class="statistics-item__image _icon-timeBlock"></div>
               </article>
               <article class="statistics__item statistics-item">
                 <div class="statistics-item__body">
-                  <div class="statistics-item__count">636,413</div>
+                  <div class="statistics-item__count total-transaction">
+                    639,413
+                  </div>
                   <h2 class="statistics-item__title">Total transactions</h2>
                 </div>
                 <div
@@ -82,7 +84,7 @@
               <article class="statistics__item statistics-item">
                 <div class="statistics-item__body">
                   <div class="statistics-item__count total-blocks">
-                    12,562,328
+                    12,710,328
                   </div>
                   <h2 class="statistics-item__title">Total blocks</h2>
                 </div>
@@ -93,7 +95,7 @@
               <article class="statistics__item statistics-item">
                 <div class="statistics-item__body">
                   <div class="statistics-item__count total-addresses">
-                    225,619
+                    227,719
                   </div>
                   <h2 class="statistics-item__title">
                     Active wallet addresses
@@ -104,20 +106,14 @@
             </div>
           </div>
 
-          <!-- <section id="particles-js1" class="page__wealth wealth">
+          <section class="page__wealth wealth">
             <div class="wealth__container">
               <div class="wealth__body">
-                <h2 class="wealth__title">
-                  <span>W</span>
-                  <img
-                    src="./src/images/wealth/Vector.svg"
-                    alt="Ecredits"
-                    class="wealth__img"
-                  />
-                  <span>alth, tokenized </span>
+                <h2 hidden>Wealth, tokenized and distributed.</h2>
+                <div class="wealth__title_2">
+                  <img src="./src/images/wealth/word.svg" alt="Title" />
+                </div>
 
-                  <span>and distributed.</span>
-                </h2>
                 <div class="wealth__text">
                   <p>
                     Together with our partners, we are solving real world’s
@@ -131,8 +127,6 @@
                     <br />
                     If you believe in making our industry safer, more secure,
                     stable and easy to use for all, join us!
-                    <br />
-                    <br />
                   </p>
                 </div>
                 <div class="wealth__actions actions-wealth">
@@ -147,9 +141,10 @@
                 </div>
               </div>
             </div>
-          </section> -->
+          </section>
         </div>
-        <!-- <section class="page__why why">
+
+        <section class="page__why why">
           <div class="why__container">
             <h2 class="why__title">Why should you join?</h2>
             <div class="why__items">
@@ -157,8 +152,7 @@
                 <div class="item-why__header">
                   <img src="./src/images/why/01.svg" alt="Built" />
                   <h3 class="item-why__title">
-                    Built with end customers<br />
-                    in mind.
+                    Built with end customers in mind.
                   </h3>
                 </div>
                 <div class="item-why__text">
@@ -178,7 +172,7 @@
                 <div class="item-why__header">
                   <img src="./src/images/why/02.svg" alt="Built" />
                   <h3 class="item-why__title">
-                    An all-encompassing support <br />to launch you first dApp.
+                    An all-encompassing support to launch you first dApp.
                   </h3>
                 </div>
                 <div class="item-why__text">
@@ -198,7 +192,7 @@
                 <div class="item-why__header">
                   <img src="./src/images/why/03.svg" alt="Built" />
                   <h3 class="item-why__title">
-                    Tokenizing real world <br />assets. 
+                    Tokenizing real world assets. 
                   </h3>
                 </div>
                 <div class="item-why__text">
@@ -215,9 +209,13 @@
               </article>
               <article class="why__item item-why">
                 <div class="item-why__header">
-                  <img src="./src/images/why/04.svg" alt="Built" />
+                  <img
+                    src="./src/images/why/04.svg"
+                    class="item-why__image_small"
+                    alt="Built"
+                  />
                   <h3 class="item-why__title">
-                    Leveling the playing field <br />with blockchain technology 
+                    Leveling the playing field with blockchain technology 
                   </h3>
                 </div>
                 <div class="item-why__text">
@@ -239,10 +237,13 @@
         <section class="page__use use">
           <div class="use__container">
             <h2 class="use__title">Use cases</h2>
-            <div class="use__body">
+            <div data-spollers="680,max" class="use__body">
               <article class="use__item item-use">
-                <h3 class="item-use__title">Portfolio managment</h3>
-                <div class="item-use__text _1">
+                <h3 data-spoller class="item-use__title">
+                  Portfolio managment
+                </h3>
+
+                <div class="item-use__text">
                   <p>
                     Create social networks that transcend chains, which will
                     unlock access to more users, interactions, and social
@@ -250,8 +251,9 @@
                   </p>
                 </div>
               </article>
+
               <article class="use__item item-use">
-                <h3 class="item-use__title">Portfolio managment</h3>
+                <h3 data-spoller class="item-use__title">Payments</h3>
                 <div class="item-use__text">
                   <p>
                     Create social networks that transcend chains, which will
@@ -261,7 +263,7 @@
                 </div>
               </article>
               <article class="use__item item-use">
-                <h3 class="item-use__title">Portfolio managment</h3>
+                <h3 class="item-use__title">Identity</h3>
                 <div class="item-use__text">
                   <p>
                     Create social networks that transcend chains, which will
@@ -271,7 +273,7 @@
                 </div>
               </article>
               <article class="use__item item-use">
-                <h3 class="item-use__title">Portfolio managment</h3>
+                <h3 class="item-use__title">NFT</h3>
                 <div class="item-use__text">
                   <p>
                     Create social networks that transcend chains, which will
@@ -281,7 +283,7 @@
                 </div>
               </article>
               <article class="use__item item-use">
-                <h3 class="item-use__title">Portfolio managment</h3>
+                <h3 class="item-use__title">Gaming</h3>
                 <div class="item-use__text">
                   <p>
                     Create social networks that transcend chains, which will
@@ -291,7 +293,7 @@
                 </div>
               </article>
               <article class="use__item item-use">
-                <h3 class="item-use__title">Portfolio managment</h3>
+                <h3 class="item-use__title">Social</h3>
                 <div class="item-use__text">
                   <p>
                     Create social networks that transcend chains, which will
@@ -301,7 +303,7 @@
                 </div>
               </article>
               <article class="use__item item-use">
-                <h3 class="item-use__title">Portfolio managment</h3>
+                <h3 class="item-use__title">Media</h3>
                 <div class="item-use__text">
                   <p>
                     Create social networks that transcend chains, which will
@@ -311,7 +313,7 @@
                 </div>
               </article>
               <article class="use__item item-use">
-                <h3 class="item-use__title">Portfolio managment</h3>
+                <h3 class="item-use__title">DeFi</h3>
                 <div class="item-use__text">
                   <p>
                     Create social networks that transcend chains, which will
@@ -321,7 +323,7 @@
                 </div>
               </article>
               <article class="use__item item-use">
-                <h3 class="item-use__title">Portfolio managment</h3>
+                <h3 class="item-use__title">Collectibles</h3>
                 <div class="item-use__text">
                   <p>
                     Create social networks that transcend chains, which will
@@ -331,7 +333,7 @@
                 </div>
               </article>
               <article class="use__item item-use">
-                <h3 class="item-use__title">Portfolio managment</h3>
+                <h3 class="item-use__title">Governance</h3>
                 <div class="item-use__text">
                   <p>
                     Create social networks that transcend chains, which will
@@ -342,11 +344,25 @@
               </article>
             </div>
           </div>
-        </section> -->
+        </section>
+        <section class="page__building building">
+          <div class="building__container">
+            <div class="building__body">
+              <h2 class="building__title">Interested in building with us?</h2>
+              <div class="building__text">
+                <p>
+                  Get in touch with us to start your journey with eCredits. 
+                </p>
+              </div>
+            </div>
+            <div class="building__btn">
+              <a href="" class="building__button button">Get in touch</a>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
 
-    <!-- <script src="./js/lib/ws.js"></script> -->
     <script src="./js/lib/darkWhite.js"></script>
     <script src="./js/lib/particles.js"></script>
     <script src="./js/lib/ad.js"></script>

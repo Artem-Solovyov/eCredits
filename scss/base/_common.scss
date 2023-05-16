@@ -46,6 +46,7 @@
         html.light & {
             transition: box-shadow 0.4s ease;
             box-shadow: 2px 1000px 1px #fff inset;
+
             @media (any-hover: hover) {
                 &:hover {
                     border: solid 2px transparent;
@@ -74,6 +75,36 @@
                     }
                 }
             }
+            &_black {
+                box-shadow: 2px 1000px 1px $mainDarkColor inset;
+                @media (any-hover: hover) {
+                    &:hover {
+                        background: linear-gradient(
+                                273.89deg,
+                                rgba(118, 75, 193, 0.616) 24.92%,
+                                rgba(57, 114, 237, 0.52) 48.27%,
+                                rgba(50, 212, 239, 0.576) 100%
+                            ),
+                            #3c3c3c;
+                        background-origin: border-box;
+                        background-clip: content-box, border-box, text;
+                        box-shadow: 2px 1000px 1px #121213 inset;
+                        transition: box-shadow 0s ease;
+                        & span {
+                            background: linear-gradient(
+                                    273.89deg,
+                                    rgba(118, 75, 193, 0.616) 24.92%,
+                                    rgba(57, 114, 237, 0.52) 48.27%,
+                                    rgba(50, 212, 239, 0.576) 100%
+                                ),
+                                #3c3c3c;
+                            -webkit-background-clip: text;
+                            background-clip: text;
+                            color: transparent;
+                        }
+                    }
+                }
+            }
         }
         html.dark & {
             transition: box-shadow 0.4s ease;
@@ -90,11 +121,12 @@
                         #3c3c3c;
                     background-origin: border-box;
                     background-clip: content-box, border-box, text;
-                    box-shadow: 2px 1000px 1px #1e2329 inset;
+                    box-shadow: 2px 1000px 1px #121213 inset;
                     transition: box-shadow 0s ease;
                 }
             }
         }
+
         & span {
             background: linear-gradient(
                     273.89deg,
@@ -122,8 +154,38 @@
             z-index: 2;
             pointer-events: none;
         }
-        &_black {
-            box-shadow: 2px 1000px 1px #1c1f25 inset;
+    }
+}
+
+.button {
+    font-family: "Cascadia Code";
+    font-weight: 700;
+    font-style: rem(14);
+    line-height: 1.4;
+    color: $mainDarkColor;
+    padding: rem(12) rem(24);
+    background: #fff;
+    transition: all 0.2s ease;
+    font-size: rem(15);
+
+    @media (max-width: em(920)) {
+        font-size: rem(14);
+    }
+    @media (max-width: em(680)) {
+        font-size: rem(12);
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            transition: all 0.2s ease;
+            color: #fff;
+            background: linear-gradient(
+                    273.89deg,
+                    rgba(118, 75, 193, 0.616) 24.92%,
+                    rgba(57, 114, 237, 0.52) 48.27%,
+                    rgba(50, 212, 239, 0.576) 100%
+                ),
+                #5b5b5b;
         }
     }
 }

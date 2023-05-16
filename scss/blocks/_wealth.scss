@@ -1,0 +1,86 @@
+.wealth {
+    @include adaptive-value("padding-top", 60, 40, 1, 320, 768);
+    @include adaptive-value("padding-bottom", 60, 40, 1);
+    position: relative;
+
+    overflow: hidden;
+    html.light & {
+        background: #1c1f25;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: row-reverse;
+        position: relative;
+
+        &::before {
+            content: "";
+
+            background-image: url("../../src/images/wealth/01.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            @include adaptive-value("width", 577, 361, 1, 768);
+            @include adaptive-value("height", 555, 347, 1, 768);
+            @include adaptive-value("top", -60, 70, 1);
+            left: 0;
+            @media (max-width: $tablet) {
+                @include adaptive-value("width", 361, 320, 1, 320, 768);
+                @include adaptive-value("height", 347, 308, 1, 320, 768);
+            }
+            opacity: 0.5;
+        }
+    }
+
+    &__body {
+        @include adaptive-value("max-width", 580, 380, 1, 768);
+        @media (max-width: em(480)) {
+            max-width: 100%;
+        }
+        margin-right: rem(23);
+        @media (max-width: em(992)) {
+            margin-right: 0;
+        }
+    }
+    &__title_2 {
+        &:not(:last-child) {
+            margin-bottom: rem(16);
+        }
+        @include adaptive-value("width", 319, 214, 1, 768);
+        @include adaptive-value("height", 62, 48, 1, 768);
+
+        @media (max-width: $tablet) {
+            @include adaptive-value("width", 214, 179, 1, 320, 768);
+            @include adaptive-value("height", 48, 40, 1, 320, 768);
+        }
+    }
+
+    &__text {
+        position: relative;
+        z-index: 2;
+        font-family: "Cascadia Code";
+        font-weight: 300;
+        line-height: 1.4;
+        @include adaptive-value("font-size", 16, 14, 1, 768);
+        color: #fff;
+        &:not(:last-child) {
+            @include adaptive-value("margin-bottom", 48, 24, 1);
+        }
+    }
+
+    &__actions {
+        display: inline-flex;
+
+        column-gap: rem(32);
+
+        pointer-events: all;
+        @media (max-width: $mobileSmall) {
+            flex-direction: column;
+            row-gap: rem(16);
+        }
+        &__button {
+            flex: 0 0 content;
+        }
+    }
+}

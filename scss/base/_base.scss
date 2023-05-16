@@ -14,18 +14,18 @@ $textDarcColor: #212121;
 // icons font
 @font-face {
     font-family: "icons";
-    src: url("../../src/iconsFont/icons.eot?r8ita6");
-    src: url("../../src/iconsFont/icons.eot?r8ita6#iefix") format("embedded-opentype"),
-        url("../../src/iconsFont/icons.ttf?r8ita6") format("truetype"),
-        url("../../src/iconsFont/icons.woff?r8ita6") format("woff"),
-        url("../../src/iconsFont/icons.svg?r8ita6#icons") format("svg");
+    src: url("../../src/iconsFont/icons.eot?humd4y");
+    src: url("../../src/iconsFont/icons.eot?humd4y#iefix") format("embedded-opentype"),
+        url("../../src/iconsFont/icons.ttf?humd4y") format("truetype"),
+        url("../../src/iconsFont/icons.woff?humd4y") format("woff"),
+        url("../../src/iconsFont/icons.svg?humd4y#icons") format("svg");
     font-weight: normal;
     font-style: normal;
     font-display: block;
 }
 
-[class^="_icon-"],
-[class*=" _icon-"] {
+[class^="_icon-"]::before,
+[class*=" _icon-"]::before {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: "icons" !important;
     speak: never;
@@ -48,7 +48,6 @@ $textDarcColor: #212121;
 }
 ._icon-sun:before {
     content: "\e902";
-    color: #fff;
 }
 ._icon-timeBlock:before {
     content: "\e903";
@@ -101,4 +100,7 @@ html.dark {
         background: $mainDarkColor;
         color: #fff;
     }
+}
+body._lock {
+    overflow: hidden;
 }

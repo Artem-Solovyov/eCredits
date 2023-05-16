@@ -1,8 +1,9 @@
 .main-block {
+    position: relative;
     @include adaptive-value("padding-top", 116, 77, 1, 320, 768);
-    @include adaptive-value("padding-bottom", 60, 22, 1, 480, 768);
+    @include adaptive-value("padding-bottom", 60, 12, 1, 480, 768);
     @media (min-width: $tablet) {
-        @include adaptive-value("padding-bottom", 82, 60, 1, 768);
+        @include adaptive-value("padding-bottom", 102, 60, 1, 768);
         @include adaptive-value("padding-top", 210, 116, 1, 768);
     }
 
@@ -30,7 +31,7 @@
         @include adaptive-value("font-size", 14, 10, 1, 768);
         font-weight: 700;
         line-height: 1.4;
-        letter-spacing: 0.3em;
+        letter-spacing: 0.5em;
         &:not(:last-child) {
             @include adaptive-value("margin-bottom", 8, 4, 1, 320, 768);
         }

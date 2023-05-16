@@ -1,8 +1,11 @@
 .statistics {
-    @include adaptive-value("padding-bottom", 60, 40, 1, 320, 768);
-    @include adaptive-value("padding-top", 60, 22, 1, 480, 768);
-    @media (min-width: $tablet) {
-        @include adaptive-value("padding-top", 82, 60, 1, 768);
+    @include adaptive-value("padding-bottom", 60, 30, 1, 320, 768);
+    @include adaptive-value("padding-top", 60, 30, 1, 320, 768);
+    position: relative;
+    z-index: 2;
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
     }
 
     &__container {

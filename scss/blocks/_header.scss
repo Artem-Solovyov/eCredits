@@ -4,7 +4,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 5;
+    z-index: 50;
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
         -webkit-backdrop-filter: blur(6px);
         backdrop-filter: blur(6px);
@@ -126,6 +126,102 @@
         display: block;
     }
     &__body {
-        display: none;
+        @media (max-width: em(768)) {
+            position: fixed;
+            z-index: -1;
+            width: 100%;
+            height: 100vh;
+            overflow: auto;
+            top: 0;
+            left: -100%;
+            background-color: #fcf8f3;
+            transition: left 0.3s ease 0s;
+            @include adaptive-value("padding-top", 64, 48, 1, 320, 768);
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            font-size: rem(16);
+
+            & .header__theme {
+                padding: rem(11) 0;
+                font-weight: 700;
+                line-height: 1.2;
+                font-family: "Abro Sans";
+                border-bottom: 1px solid #e3e6ec;
+                display: flex;
+                justify-content: center;
+                width: 100vw;
+            }
+            & .nav__item {
+                &:nth-child(1) {
+                    border-top: 1px solid #e3e6ec;
+                }
+                padding: rem(16) 0;
+                display: flex;
+                justify-content: center;
+                width: 100vw;
+                border-bottom: 1px solid #e3e6ec;
+            }
+            & .header__nav {
+                width: 100vw;
+            }
+            & .nav__link {
+                font-weight: 700;
+                line-height: 1.2;
+                font-family: "Abro Sans";
+            }
+            & .nav__list {
+                display: flex;
+                flex-direction: column;
+            }
+            .light & {
+                background-color: #fff;
+                & .header__theme {
+                    display: flex;
+                    align-items: center;
+                    column-gap: rem(8);
+                    @media (any-hover: hover) {
+                        &:hover {
+                            color: $mainDarkColor;
+                        }
+                    }
+                    &::after {
+                        content: "Dark Mode";
+                        transform: translate(0%, 10%);
+                    }
+                }
+            }
+            .dark & {
+                background-color: $mainDarkColor;
+                & .header__theme {
+                    display: flex;
+                    align-items: center;
+                    column-gap: rem(8);
+                    border-bottom: 1px solid #3a3a3a;
+                    @media (any-hover: hover) {
+                        &:hover {
+                            color: #fff;
+                        }
+                    }
+                    &::after {
+                        content: "Light Mode";
+                        transform: translate(0%, 10%);
+                    }
+                }
+
+                & .nav__item {
+                    &:nth-child(1) {
+                        border-top: 1px solid #3a3a3a;
+                    }
+
+                    border-bottom: 1px solid #3a3a3a;
+                }
+            }
+        }
+
+        &._active {
+            left: 0;
+        }
     }
 }
