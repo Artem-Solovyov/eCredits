@@ -1612,7 +1612,8 @@ html.dark .item-why {
   max-width: 20rem;
   font-weight: 400;
   font-size: 1.25rem;
-  line-height: 1.7; /* 24/20 */
+  line-height: 1.2; /* 24/20 */
+  letter-spacing: 0.01em;
 }
 @media (max-width: 48em) {
   .item-why__title {
