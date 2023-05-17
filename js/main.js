@@ -216,9 +216,9 @@ if (document.querySelector(".slider-jobs__body")) {
   new Swiper(".slider-jobs__body", {
     // observer: true,
     // observeParents: true,
-    centeredSlides: true,
+    // centeredSlides: true,
     initialSlide: 1,
-    slidesPerView: 3,
+    // slidesPerView: 3,
     spaceBetween: 34,
     watchOverflow: true,
     speed: 800,
@@ -230,8 +230,8 @@ if (document.querySelector(".slider-jobs__body")) {
       clickable: true,
     },
     navigation: {
-      nextEl: ".slider-tips .slider-arrow_next",
-      prevEl: ".slider-tips .slider-arrow_prev",
+      nextEl: ".slider-jobs .slider-arrow_next",
+      prevEl: ".slider-jobs .slider-arrow_prev",
     },
     breakpoints: {
       320: {
@@ -239,11 +239,11 @@ if (document.querySelector(".slider-jobs__body")) {
         spaceBetween: 15,
       },
       600: {
-        slidesPerView: 2,
-        spaceBetween: 29,
-      },
-      992: {
         slidesPerView: 3,
+        spaceBetween: 32,
+      },
+      1280: {
+        slidesPerView: 4,
         spaceBetween: 32,
       },
     },

@@ -186,6 +186,11 @@ select {
   content: "\e905";
 }
 
+._icon-arrow:before {
+  content: "\e906";
+  color: #fff;
+}
+
 [class*=__container] {
   max-width: 73.125rem;
   box-sizing: content-box;
@@ -1605,9 +1610,9 @@ html.dark .item-why {
   position: relative;
   z-index: 10;
   max-width: 20rem;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 1.25rem;
-  line-height: 1.2; /* 24/20 */
+  line-height: 1.7; /* 24/20 */
 }
 @media (max-width: 48em) {
   .item-why__title {
@@ -2414,6 +2419,83 @@ html.dark .item-use::before {
     display: flex;
     justify-content: center;
   }
+}
+.jobs__container {
+  margin-bottom: 3.75rem;
+  margin-top: 3.75rem;
+}
+@media (max-width: 20em) {
+  .jobs__container {
+    margin-bottom: 2.5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 80em) {
+  .jobs__container {
+    margin-bottom: calc(
+                2.5rem + 20 * ((100vw - 20rem) / 960)
+            );
+  }
+}
+@media (max-width: 20em) {
+  .jobs__container {
+    margin-top: 2.5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 40.5em) {
+  .jobs__container {
+    margin-top: calc(
+                2.5rem + 20 * ((100vw - 20rem) / 328)
+            );
+  }
+}
+.jobs__title {
+  font-size: 2.25rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 48em) {
+  .jobs__title {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 48em) and (max-width: 80em) {
+  .jobs__title {
+    font-size: calc(
+                1.5rem + 12 * ((100vw - 48rem) / 512)
+            );
+  }
+}
+@media (max-width: 47.99875em) {
+  .jobs__title {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 47.99875em) and (max-width: 20em) {
+  .jobs__title {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 47.99875em) and (min-width: 20em) and (max-width: 48em) {
+  .jobs__title {
+    font-size: calc(
+                1.25rem + 4 * ((100vw - 20rem) / 448)
+            );
+  }
+}
+@media (max-width: 20em) {
+  .jobs__title {
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 48em) {
+  .jobs__title {
+    margin-bottom: calc(
+                1rem + 8 * ((100vw - 20rem) / 448)
+            );
+  }
+}
+.slider-jobs__image {
+  padding: 0 0 57.4626865672% 0px;
 }
 @media (max-width: 48em) {
   .icon-menu {

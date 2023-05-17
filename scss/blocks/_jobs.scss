@@ -1,0 +1,56 @@
+.page {
+    &__jobs {
+    }
+}
+.jobs {
+    &__container {
+        @include adaptive-value("margin-bottom", 60, 40, 1);
+        @include adaptive-value("margin-top", 60, 40, 1, 320, 648);
+    }
+
+    &__title {
+        @include adaptive-value("font-size", 36, 24, 1, 768);
+        text-align: center;
+        @media (max-width: $tablet) {
+            @include adaptive-value("font-size", 24, 20, 1, 320, 768);
+        }
+        @include adaptive-value("margin-bottom", 24, 16, 1, 320, 768);
+    }
+
+    &__slider {
+    }
+}
+.slider-jobs {
+    &__body {
+    }
+
+    &__wrapper {
+    }
+
+    &__slide {
+    }
+
+    &__image {
+        padding: 0 0 154/268 * 100% 0px;
+    }
+
+    &__content {
+    }
+
+    &__title {
+    }
+
+    &__text {
+    }
+}
+
+.slider-arrow {
+    &_white {
+    }
+
+    &_prev {
+    }
+
+    &_next {
+    }
+}

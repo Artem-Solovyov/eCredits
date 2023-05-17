@@ -58,6 +58,10 @@ $textDarcColor: #212121;
 ._icon-transBlock:before {
     content: "\e905";
 }
+._icon-arrow:before {
+    content: "\e906";
+    color: #fff;
+}
 
 [class*="__container"] {
     max-width: rem($maxWidthContainer);
