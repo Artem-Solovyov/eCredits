@@ -381,6 +381,9 @@
             opacity: 1;
             visibility: visible;
             transform: translate(0%, -50%) rotate(90deg);
+            @media (min-width: em(1280)) {
+                transform: translate(0%, -50%);
+            }
         }
     }
 

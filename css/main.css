@@ -443,7 +443,6 @@ html.dark .btn_2 {
 }
 
 .header {
-  padding: 7px 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -469,7 +468,7 @@ html.dark .header {
   }
 }
 .header__container {
-  min-height: 3.125rem;
+  min-height: 4rem;
   position: relative;
 }
 @media (min-width: 48em) {
@@ -488,13 +487,13 @@ html.dark .header {
 }
 @media (max-width: 20em) {
   .header__container {
-    min-height: 2.125rem;
+    min-height: 3rem;
   }
 }
 @media (min-width: 20em) and (max-width: 48em) {
   .header__container {
     min-height: calc(
-                2.125rem + 16 * ((100vw - 20rem) / 448)
+                3rem + 16 * ((100vw - 20rem) / 448)
             );
   }
 }
@@ -543,30 +542,30 @@ html.dark .header__theme::before {
 .logo__link {
   display: block;
   background: url("../../src/icons/logo/logo.svg") 0 0/100% no-repeat;
-  width: 9.5625rem;
-  height: 3.125rem;
+  width: 9.4375rem;
+  height: 3.625rem;
 }
 @media (max-width: 20em) {
   .logo__link {
-    width: 5.4375rem;
+    width: 5.5rem;
   }
 }
 @media (min-width: 20em) and (max-width: 48em) {
   .logo__link {
     width: calc(
-                5.4375rem + 66 * ((100vw - 20rem) / 448)
+                5.5rem + 63 * ((100vw - 20rem) / 448)
             );
   }
 }
 @media (max-width: 20em) {
   .logo__link {
-    height: 1.75rem;
+    height: 1.875rem;
   }
 }
 @media (min-width: 20em) and (max-width: 48em) {
   .logo__link {
     height: calc(
-                1.75rem + 22 * ((100vw - 20rem) / 448)
+                1.875rem + 28 * ((100vw - 20rem) / 448)
             );
   }
 }
@@ -574,6 +573,9 @@ html.dark .logo__link {
   background: url("../../src/icons/logo/darkLogo.svg") 0 0/100% no-repeat;
 }
 
+.nav {
+  transform: translate(0, 0.125rem);
+}
 .nav__list {
   display: flex;
   align-items: center;
@@ -2074,6 +2076,11 @@ html.dark .item-use::before {
   opacity: 1;
   visibility: visible;
   transform: translate(0%, -50%) rotate(90deg);
+}
+@media (min-width: 80em) {
+  ._touch .item-use::after {
+    transform: translate(0%, -50%);
+  }
 }
 @media (any-hover: hover) and (min-width: 42.5625em) {
   .item-use:hover {
