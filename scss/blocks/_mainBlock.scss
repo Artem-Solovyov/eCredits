@@ -46,10 +46,11 @@
     }
 
     &__sub-title {
-        font-weight: 700;
+        font-weight: 400;
         @include adaptive-value("font-size", 20, 16, 1, 768);
         font-size: rem(20);
         line-height: 1.2;
+        letter-spacing: 0.01em;
         &:not(:last-child) {
             @include adaptive-value("margin-bottom", 36, 24, 1);
         }

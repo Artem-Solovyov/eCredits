@@ -1,0 +1,198 @@
+.page {
+    &__company {
+    }
+}
+.company {
+    position: relative;
+    &__container {
+        @include adaptive-value("padding-top", 120, 60, 1);
+        @include adaptive-value("padding-bottom", 120, 60, 1);
+        display: flex;
+        flex-direction: column;
+        @include adaptive-value("row-gap", 26, 16, 1);
+        & > .company__title {
+            margin: 0 auto;
+            width: rem(180);
+            padding: 0;
+        }
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: rem(8);
+        @media (max-width: rem(500)) {
+            flex-direction: column;
+            row-gap: rem(16);
+        }
+    }
+
+    &__block {
+        display: flex;
+        @include adaptive-value("column-gap", 16, 8, 1, 768);
+    }
+
+    &__item-rocksolid {
+        &::after {
+            content: "";
+            display: block;
+            position: relative;
+            z-index: 3;
+
+            background-image: url("../src/images/company/rock.svg");
+            .dark & {
+                background-image: url("../src/images/company/rock_dark.svg");
+            }
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            @include adaptive-value("width", 176, 105, 1, 768);
+            @include adaptive-value("height", 92, 55, 1, 768);
+        }
+    }
+
+    &__item-blocktaride {
+        &::after {
+            content: "";
+            display: block;
+            position: relative;
+            z-index: 3;
+
+            background-image: url("../src/images/company/blocktrade.svg");
+            .dark & {
+                background-image: url("../src/images/company/blocktrade_dark.svg");
+            }
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            @include adaptive-value("width", 176, 105, 1, 768);
+            @include adaptive-value("height", 92, 55, 1, 768);
+        }
+    }
+
+    &__item-peoples {
+        &::after {
+            content: "";
+            display: block;
+            position: relative;
+            z-index: 3;
+
+            background-image: url("../src/images/company/peoples.svg");
+            .dark & {
+                background-image: url("../src/images/company/peoples_dark.svg");
+            }
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            @include adaptive-value("width", 176, 105, 1, 768);
+            @include adaptive-value("height", 92, 55, 1, 768);
+        }
+    }
+
+    &__item-criptix {
+        &::after {
+            content: "";
+            display: block;
+            position: relative;
+            z-index: 3;
+
+            background-image: url("../src/images/company/cryptix.svg");
+            .dark & {
+                background-image: url("../src/images/company/cryptix_dark.svg");
+            }
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            @include adaptive-value("width", 176, 105, 1, 768);
+            @include adaptive-value("height", 92, 55, 1, 768);
+        }
+    }
+
+    &__title {
+        @include adaptive-value("width", 230, 130, 1, 768);
+        @include adaptive-value("padding-left", 30, 10, 1, 768);
+        @include adaptive-value("padding-right", 30, 10, 1, 768);
+        text-align: center;
+        @include adaptive-value("font-size", 36, 24, 1, 768);
+        @media (max-width: $tablet) {
+            @include adaptive-value("font-size", 24, 20, 1, 320, 768);
+        }
+    }
+
+    &__item-ecredits {
+        &::after {
+            content: "";
+            display: block;
+            position: relative;
+            z-index: 3;
+
+            background-image: url("../src/images/company/ecredits.svg");
+            .dark & {
+                background-image: url("../src/images/company/ecredits_dark.svg");
+            }
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            @include adaptive-value("width", 176, 105, 1, 768);
+            @include adaptive-value("height", 92, 55, 1, 768);
+        }
+    }
+
+    &__item-ancore {
+        &::after {
+            content: "";
+            display: block;
+            position: relative;
+            z-index: 3;
+
+            background-image: url("../src/images/company/ancore.svg");
+            .dark & {
+                background-image: url("../src/images/company/ancore_dark.svg");
+            }
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            @include adaptive-value("width", 176, 105, 1, 768);
+            @include adaptive-value("height", 92, 55, 1, 768);
+        }
+    }
+
+    &__item-equito {
+        &::after {
+            content: "";
+            display: block;
+            position: relative;
+            z-index: 3;
+
+            background-image: url("../src/images/company/equito.svg");
+            .dark & {
+                background-image: url("../src/images/company/equito_dark.svg");
+            }
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            @include adaptive-value("width", 176, 105, 1, 768);
+            @include adaptive-value("height", 92, 55, 1, 768);
+        }
+    }
+
+    &__item-bittrex {
+        &::after {
+            content: "";
+            display: block;
+            position: relative;
+            z-index: 3;
+
+            background-image: url("../src/images/company/bittrex.svg");
+            .dark & {
+                background-image: url("../src/images/company/bittrex_dark.svg");
+            }
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            @include adaptive-value("width", 176, 105, 1, 768);
+            @include adaptive-value("height", 92, 55, 1, 768);
+        }
+    }
+}

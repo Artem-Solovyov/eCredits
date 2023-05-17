@@ -4,7 +4,7 @@
 }
 .jobs {
     &__container {
-        @include adaptive-value("margin-bottom", 60, 40, 1);
+        @include adaptive-value("margin-bottom", 60, 20, 1);
         @include adaptive-value("margin-top", 60, 40, 1, 320, 648);
     }
 
@@ -18,16 +18,28 @@
     }
 
     &__slider {
+        position: relative;
     }
 }
 .slider-jobs {
     &__body {
+        overflow: visible;
     }
 
     &__wrapper {
+        position: relative;
+        z-index: 3;
     }
 
     &__slide {
+        .light & {
+            background-color: #fff;
+            border: 2px solid #e3e6ec;
+        }
+        .dark & {
+            background: #1c1f25;
+            border: 2px solid #3a3a3a;
+        }
     }
 
     &__image {
@@ -35,12 +47,25 @@
     }
 
     &__content {
+        padding: rem(16) rem(8) rem(32) rem(8);
     }
 
     &__title {
+        max-width: rem(230);
+        font-weight: 700;
+        @include adaptive-value("font-size", 20, 16, 1, 768);
+        line-height: 1.2;
+        &:not(:last-child) {
+            margin-bottom: rem(4);
+        }
     }
 
     &__text {
+        font-family: "Cascadia Code";
+
+        font-weight: 300;
+        line-height: 1.4;
+        @include adaptive-value("font-size", 16, 14, 1, 768);
     }
 }
 
@@ -49,8 +74,32 @@
     }
 
     &_prev {
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        left: rem(-5);
+        transform: translate(0, -100%) rotate(180deg);
+        &::before {
+            font-size: rem(32);
+            color: #3a3a3a;
+            .dark & {
+                color: #fff;
+            }
+        }
     }
 
     &_next {
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        right: rem(-5);
+        transform: translate(0, -100%);
+        &::before {
+            font-size: rem(32);
+            color: #3a3a3a;
+            .dark & {
+                color: #fff;
+            }
+        }
     }
 }
