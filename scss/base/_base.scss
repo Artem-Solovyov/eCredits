@@ -62,6 +62,9 @@ $textDarcColor: #212121;
     content: "\e906";
     color: #fff;
 }
+._icon-close:before {
+    content: "\e907";
+}
 
 [class*="__container"] {
     max-width: rem($maxWidthContainer);

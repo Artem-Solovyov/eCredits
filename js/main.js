@@ -1,6 +1,6 @@
 if (document.querySelector(".wrapper").clientWidth > 319) {
-  particlesJS.load("particles-js", "../json/particles.json", function () {});
-  particlesJS.load("particles-js-1", "../json/particles.json", function () {});
+  // particlesJS.load("particles-js", "../json/particles.json", function () {});
+  // particlesJS.load("particles-js-1", "../json/particles.json", function () {});
 }
 
 // funcyion is mobile
@@ -107,7 +107,7 @@ window.addEventListener("unload", function () {
 
 // HTML <a dataset-goto=".class"/>'
 
-const menuLinks = document.querySelectorAll(".menu__link[data-goto]");
+const menuLinks = document.querySelectorAll("[data-goto]");
 if (menuLinks.length > 0) {
   console.log("Hello");
   menuLinks.forEach((menuLink) => {
@@ -224,13 +224,13 @@ if (document.querySelector(".slider-jobs__body")) {
     speed: 800,
 
     pagination: {
-      el: ".slider-tips__dotts",
+      el: ".slider-jobs__dotts",
       clickable: true,
     },
-    navigation: {
-      nextEl: ".slider-jobs .slider-arrow_next",
-      prevEl: ".slider-jobs .slider-arrow_prev",
-    },
+    // navigation: {
+    //   nextEl: ".slider-jobs .slider-arrow_next",
+    //   prevEl: ".slider-jobs .slider-arrow_prev",
+    // },
     breakpoints: {
       320: {
         slidesPerView: 1,
@@ -269,3 +269,95 @@ if (document.querySelector(".slider-jobs__body")) {
   });
 }
 //==========================SWIPER end=======================================
+//=========================POPUp form start===================================
+
+const popupLinks = document.querySelectorAll("[data-popup]");
+const body = document.querySelector("body");
+const lockPadding = document.querySelectorAll(".lock-padding");
+
+let unlock = true;
+const timeout = 800;
+
+if (popupLinks.length > 0) {
+  popupLinks.forEach((popupLink) => {
+    popupLink.addEventListener("click", function (e) {
+      const popupName = popupLink.getAttribute("data-popup").replace("#", "");
+      const curentPopup = document.getElementById(popupName);
+      popupOpen(curentPopup);
+      e.preventDefault();
+    });
+  });
+}
+
+const popupCloseIcon = document.querySelectorAll(".callback-popup");
+if (popupCloseIcon.length > 0) {
+  popupCloseIcon.forEach((el) => {
+    el.addEventListener("click", function (e) {
+      popupClose(el.closest(".callback"));
+      e.preventDefault();
+    });
+  });
+}
+
+function popupOpen(curentPopup) {
+  if (curentPopup && unlock) {
+    const popupActive = document.querySelector(".callback.open");
+    if (popupActive) {
+      popupClose(popupActive, false);
+    } else {
+      bodyLock();
+    }
+    curentPopup.classList.add("open");
+    curentPopup.addEventListener("click", function (e) {
+      if (!e.target.closest(".callback__content")) {
+        popupClose(e.target.closest(".callback"));
+      }
+    });
+  }
+}
+function bodyLock() {
+  const lockPaddingValue =
+    window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
+  if (lockPadding.length > 0) {
+    lockPadding.forEach((el) => {
+      el.style.paddingRight = lockPaddingValue;
+    });
+  }
+  body.style.paddingRight = lockPaddingValue;
+  body.classList.add("lock");
+  unlock = false;
+  setTimeout(function () {
+    unlock = true;
+  }, timeout);
+}
+function popupClose(popupActive, doUnlock = true) {
+  if (unlock) {
+    popupActive.classList.remove("open");
+    if (doUnlock) {
+      bodyUnLock();
+    }
+  }
+}
+function bodyUnLock() {
+  setTimeout(function () {
+    if (lockPadding.length > 0) {
+      lockPadding.forEach((el) => {
+        el.style.paddingRight = "0px";
+      });
+    }
+    body.style.paddingRight = "0px";
+    body.classList.remove("lock");
+  }, timeout);
+  unlock = false;
+  setTimeout(function () {
+    unlock = true;
+  }, timeout);
+}
+document.addEventListener("keydown", function (e) {
+  if (e.which === 27) {
+    const popupActive = document.querySelector(".popup.open");
+    popupClose(popupActive);
+  }
+});
+
+//=========================POPUp form end===================================

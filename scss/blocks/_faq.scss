@@ -1,0 +1,112 @@
+.page {
+    &__faq {
+    }
+}
+.faq {
+    &__container {
+        @include adaptive-value("padding-top", 60, 10, 1, 320, 768);
+        @include adaptive-value("padding-bottom", 60, 20, 1, 320, 768);
+    }
+
+    &__title {
+    }
+
+    &__body {
+        &._init .block__title::after,
+        &._init .block__title::before {
+            content: "";
+            width: 20px;
+            height: 1px;
+            background-color: #fff;
+            position: absolute;
+            right: 10px;
+            top: 20px;
+            transition: transform 0.3s easy 0s;
+        }
+        &._init .block__title::after {
+            transform: rotate(-90deg);
+        }
+        &._init .block__title._active::after {
+            transform: rotate(0deg);
+        }
+    }
+
+    &__item {
+    }
+
+    &__text {
+    }
+}
+.page {
+    &__faq {
+    }
+}
+.faq {
+    &__container {
+    }
+
+    &__title {
+        text-align: center;
+        font-weight: 400;
+        @include adaptive-value("font-size", 36, 24, 1, 768);
+        @media (max-width: $tablet) {
+            @include adaptive-value("font-size", 24, 20, 1, 320, 768);
+        }
+        @include adaptive-value("padding-bottom", 24, 16, 1, 320, 768);
+    }
+
+    &__body {
+        &._init .item-faq__title::after,
+        &._init .item-faq__title::before {
+            content: "";
+            width: 20px;
+            height: 2px;
+            background: linear-gradient(
+                    273.89deg,
+                    rgba(118, 75, 193, 0.616) 24.92%,
+                    rgba(57, 114, 237, 0.52) 48.27%,
+                    rgba(50, 212, 239, 0.576) 100%
+                ),
+                #5b5b5b;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transition: transform 0.3s 0s ease;
+        }
+        &._init .item-faq__title::after {
+            transform: rotate(-90deg);
+        }
+        &._init .item-faq__title._active::after {
+            transform: rotate(0deg);
+        }
+    }
+
+    &__item {
+    }
+}
+.item-faq {
+    border-top: 2px solid #e3e6ec;
+    &:last-child {
+        border-bottom: 2px solid #e3e6ec;
+    }
+
+    &__title {
+        padding: rem(16) rem(60) rem(16) rem(8);
+        cursor: pointer;
+        position: relative;
+        font-weight: 400;
+        line-height: 1.2;
+        @include adaptive-value("font-size", 20, 16, 1, 768);
+        letter-spacing: 0.01em;
+        &::after {
+        }
+    }
+
+    &__text {
+        font-family: "Cascadia Code";
+        font-weight: 300;
+        padding: 0 rem(50) rem(16) rem(8);
+        @include adaptive-value("font-size", 16, 14, 1, 768);
+        line-height: 1.4;
+    }
+}

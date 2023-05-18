@@ -5,8 +5,8 @@
 .company {
     position: relative;
     &__container {
-        @include adaptive-value("padding-top", 120, 60, 1);
-        @include adaptive-value("padding-bottom", 120, 60, 1);
+        @include adaptive-value("padding-top", 180, 60, 1);
+        @include adaptive-value("padding-bottom", 180, 60, 1);
         display: flex;
         flex-direction: column;
         @include adaptive-value("row-gap", 26, 16, 1);
@@ -40,9 +40,9 @@
             position: relative;
             z-index: 3;
 
-            background-image: url("../src/images/company/rock.svg");
+            background-image: url("../src/images/company/rock.png");
             .dark & {
-                background-image: url("../src/images/company/rock_dark.svg");
+                background-image: url("../src/images/company/rock_dark.jpg");
             }
             background-position: center;
             background-size: cover;

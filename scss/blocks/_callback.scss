@@ -1,0 +1,81 @@
+.callback {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(2, 2, 2, 0.93);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.4s ease;
+    z-index: 100;
+}
+.callback.open {
+    opacity: 1;
+    visibility: visible;
+}
+.callback.open .callback__form {
+    transform: perspective(600px) translate(0px, 0px) rotateX(0deg);
+    opacity: 1;
+}
+// .callback__area {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     cursor: default;
+// }
+.callback__body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+}
+.callback__form {
+    background-color: #fff;
+    color: #333;
+    max-width: 600px;
+    padding: rem(16) rem(24);
+    position: relative;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+}
+
+body.lock {
+    overflow: hidden;
+}
+
+.callback {
+    &__form {
+    }
+}
+.form-callback {
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__title {
+    }
+    &__close {
+    }
+}
+.form {
+    &__body {
+    }
+
+    &__item {
+    }
+
+    &__input {
+    }
+
+    &__button {
+    }
+}

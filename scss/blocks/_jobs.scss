@@ -4,7 +4,6 @@
 }
 .jobs {
     &__container {
-        @include adaptive-value("margin-bottom", 60, 20, 1);
         @include adaptive-value("margin-top", 60, 40, 1, 320, 648);
     }
 
@@ -22,6 +21,9 @@
     }
 }
 .slider-jobs {
+    &:not(:last-child) {
+        margin-bottom: rem(40);
+    }
     &__body {
         overflow: visible;
     }
@@ -43,7 +45,7 @@
     }
 
     &__image {
-        padding: 0 0 154/268 * 100% 0px;
+        padding: 0 0 0.57 * 100% 0px;
     }
 
     &__content {
@@ -66,6 +68,37 @@
         font-weight: 300;
         line-height: 1.4;
         @include adaptive-value("font-size", 16, 14, 1, 768);
+    }
+    &__dotts {
+        padding: rem(24) 0;
+        display: flex;
+        justify-content: center;
+    }
+}
+.swiper-pagination-bullet {
+    .dark & {
+        background: #fff;
+        opacity: 1;
+    }
+}
+.swiper-pagination-bullet-active {
+    width: rem(16);
+    border-radius: 31px;
+    --swiper-theme-color: linear-gradient(
+            273.89deg,
+            rgba(118, 75, 193, 0.616) 24.92%,
+            rgba(57, 114, 237, 0.52) 48.27%,
+            rgba(50, 212, 239, 0.576) 100%
+        ),
+        #5b5b5b;
+    .dark & {
+        background: linear-gradient(
+                273.89deg,
+                rgba(118, 75, 193, 0.616) 24.92%,
+                rgba(57, 114, 237, 0.52) 48.27%,
+                rgba(50, 212, 239, 0.576) 100%
+            ),
+            #5b5b5b;
     }
 }
 

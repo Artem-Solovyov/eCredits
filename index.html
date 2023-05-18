@@ -17,7 +17,7 @@
       <header class="header">
         <div class="header__container">
           <div class="header__logo logo">
-            <a href="" class="logo__link"> </a>
+            <a href="#" data-goto=".main-block" class="logo__link"> </a>
           </div>
           <nav data-da=".menu__body,768,first" class="header__nav nav">
             <ul class="nav__list">
@@ -359,7 +359,9 @@
               </div>
             </div>
             <div class="building__btn">
-              <a href="" class="building__button button">Get in touch</a>
+              <a href="" data-popup="#callback" class="building__button button"
+                >Get in touch</a
+              >
             </div>
           </div>
         </section>
@@ -439,16 +441,7 @@
                   </article>
                 </div>
               </div>
-              <div class="slider-jobs-arrows slider-arrows">
-                <button
-                  type="button"
-                  class="slider-arrow slider-arrow_white slider-arrow_prev _icon-arrow"
-                ></button>
-                <button
-                  type="button"
-                  class="slider-arrow slider-arrow_white slider-arrow_next _icon-arrow"
-                ></button>
-              </div>
+              <div class="slider-jobs__dotts"></div>
             </div>
           </div>
         </section>
@@ -484,9 +477,189 @@
             </div>
           </div>
         </section>
+        <section class="page__faq faq">
+          <div class="faq__container">
+            <h2 class="faq__title">FAQ</h2>
+            <div data-spollers data-one-spoller class="faq__body">
+              <article class="faq__item item-faq">
+                <h3 data-spoller class="item-faq__title">
+                  What is eCredits Blockchain in simple terms?
+                </h3>
+                <div class="item-faq__text">
+                  <p>
+                    We are an Ethereum Virtual Machine (EVM) Layer 1 blockchain,
+                    similar to Ethereum itself. This means we use same tooling,
+                    libraries, and smart contract logic.
+                  </p>
+                </div>
+              </article>
+              <article class="faq__item item-faq">
+                <h3 data-spoller class="item-faq__title">
+                  Why was eCredits Blockchain created?
+                </h3>
+                <div class="item-faq__text">
+                  <p>
+                    eCredits blockchain is a European project, which means it is
+                    our aspiration to create a familiar, safe and secure
+                    environment for both developers and users. Our core
+                    principle is to address real pain points for real people.
+                    eCredits’ existing partners have been building real-life use
+                    cases, predominantly focusing on tokenization of real life
+                    assets.
+                  </p>
+                </div>
+              </article>
+              <article class="faq__item item-faq">
+                <h3 data-spoller class="item-faq__title">
+                  How does the chain work?
+                </h3>
+                <div class="item-faq__text">
+                  <p>
+                    We follow a Proof-of-Stake consensus mechanism, where
+                    stakers are validating entries into a distributed database,
+                    keeping the database secure.
+                  </p>
+                </div>
+              </article>
+              <article class="faq__item item-faq">
+                <h3 data-spoller class="item-faq__title">
+                  How secure is the eCredits chain?
+                </h3>
+                <div class="item-faq__text">
+                  <p>
+                    Safety and security is one of our key principles. Our chain
+                    has been audited by Nethermind – a leading blockchain
+                    development and auditing firm. In addition, the chain’s
+                    development partner, Cryptix Group became the first company
+                    in the EU and Switzerland with a CryptoCurrency Security
+                    Standard (CCSS) auditor on staff when its Chief Information
+                    Security Officer and Data Protection Officer Alexandre
+                    Horvath earned his CCSS certification from the
+                    CryptoCurrency Certification Consortium (C4) last month.
+                  </p>
+                </div>
+              </article>
+              <article class="faq__item item-faq">
+                <h3 data-spoller class="item-faq__title">
+                  What’s unique about the eCredits chain?
+                </h3>
+                <div class="item-faq__text">
+                  <p>
+                    We are safe, secure and compliant. Best part – we come with
+                    hundreds of thousands of users, with whom you can test your
+                    solution or even captivate then as your future clients.
+                  </p>
+                </div>
+              </article>
+              <article class="faq__item item-faq">
+                <h3 data-spoller class="item-faq__title">
+                  Who are your partners?
+                </h3>
+                <div class="item-faq__text">
+                  <p>
+                    Our partners are: Cryptix, eCredits app, Equito, Blocktrade,
+                    Rocksolid, Nethermind, Bittrex Global, EXMO and others.
+                  </p>
+                </div>
+              </article>
+              <article class="faq__item item-faq">
+                <h3 data-spoller class="item-faq__title">
+                  How can I start building my first application on the eCredits
+                  chain?
+                </h3>
+                <div class="item-faq__text">
+                  <p>
+                    The first step would be to check out our docs section here:
+                    docs.ecredits.com
+                  </p>
+                </div>
+              </article>
+              <article class="faq__item item-faq">
+                <h3 data-spoller class="item-faq__title">
+                  What support is there for developers?
+                </h3>
+                <div class="item-faq__text">
+                  <p>
+                    We support our developers with extensive technical
+                    literature, cross-promotional activities and grants. For
+                    more information, get in touch with us.
+                  </p>
+                </div>
+              </article>
+              <article class="faq__item item-faq">
+                <h3 data-spoller class="item-faq__title">Are you hiring?</h3>
+                <div class="item-faq__text">
+                  <p>
+                    We are always looking for awesome talent, both on technical
+                    and business side of things. For more information, do get in
+                    touch.
+                  </p>
+                </div>
+              </article>
+              <article class="faq__item item-faq">
+                <h3 data-spoller class="item-faq__title">
+                  Where can I learn more about the eCredits Blockchain?
+                </h3>
+                <div class="item-faq__text">
+                  <p>Learn more about our chain here:</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
+    <div id="callback" class="callback">
+      <div class="callback__body">
+        <section class="callback__form form-callback">
+          <div class="form-callback__header">
+            <h2 class="form-callback__title">Contact Us</h2>
+            <a
+              href="#header"
+              class="form-callback__close callback-popup _icon-close"
+            ></a>
+          </div>
+          <form action="#" id="form" class="form__body">
+            <div class="form__item">
+              <input
+                type="text"
+                placeholder="Your Name"
+                name="name"
+                class="form__input _req"
+              />
+            </div>
+            <div class="form__item">
+              <input
+                type="text"
+                placeholder="Your Email Address"
+                name="email"
+                class="form__input _req _email"
+              />
+            </div>
 
+            <!-- Input message -->
+            <div class="form__item">
+              <textarea
+                name="message"
+                placeholder="Message"
+                class="form__input"
+              ></textarea>
+            </div>
+
+            <!-- добавление элемента div -->
+            <div
+              class="g-recaptcha"
+              data-sitekey="6LdNge8lAAAAALXLlM652hqUD72-OUX_1_zRGNtV"
+            ></div>
+
+            <!-- элемент для вывода ошибок -->
+            <div class="text-danger" id="recaptchaError"></div>
+
+            <button class="form__button" type="submit">Send</button>
+          </form>
+        </section>
+      </div>
+    </div>
     <script src="./js/lib/darkWhite.js"></script>
     <script src="./js/lib/particles.js"></script>
     <script src="./js/lib/ad.js"></script>

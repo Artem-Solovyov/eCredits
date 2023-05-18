@@ -110,11 +110,37 @@
     }
 
     &__link {
+        position: relative;
         font-family: "Cascadia Code";
         font-weight: 300;
         font-size: rem(16);
         line-height: 1.4;
         color: $mainDarkColor;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: rem(-6);
+            left: 0;
+            width: 100%;
+            height: rem(1);
+            background: linear-gradient(
+                    273.89deg,
+                    rgba(118, 75, 193, 0.616) 24.92%,
+                    rgba(57, 114, 237, 0.52) 48.27%,
+                    rgba(50, 212, 239, 0.576) 100%
+                ),
+                #5b5b5b;
+            transform: scale(0);
+            transition: transform 0.3s ease;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                &::after {
+                    transform: scale(1);
+                    transition: transform 0.3s ease;
+                }
+            }
+        }
 
         html.dark & {
             color: #fff;
