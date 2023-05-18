@@ -2721,7 +2721,7 @@ html.dark .item-use::before {
   height: 5.75rem;
 }
 .dark .company__item-rocksolid::after {
-  background-image: url("../src/images/company/rock_dark.jpg");
+  background-image: url("../src/images/company/rock_dark.png");
 }
 @media (max-width: 48em) {
   .company__item-rocksolid::after {
