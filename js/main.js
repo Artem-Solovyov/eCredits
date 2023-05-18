@@ -361,3 +361,17 @@ document.addEventListener("keydown", function (e) {
 });
 
 //=========================POPUp form end===================================
+
+//========================= Lotti start===============================
+
+// const anim = lottie;
+
+// anim.loadAnimation({
+//   container: document.querySelector("#lottie"),
+//   rendere: "svg",
+//   loop: true,
+//   autoplay: true,
+//   path: "../json/anim.json",
+// });
+
+//========================= Lotti end===============================
