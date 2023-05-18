@@ -143,8 +143,11 @@
         @include adaptive-value("font-size", 20, 16, 1, 768);
         line-height: 1.2;
         letter-spacing: 0.01em;
-        pointer-events: none;
+
         transition: transform 0.3s ease;
+        @media (min-width: em(681)) {
+            pointer-events: none;
+        }
     }
 
     &__text {
@@ -154,6 +157,8 @@
         @include adaptive-value("font-size", 16, 14, 1);
 
         @media (min-width: em(681)) {
+            opacity: 0;
+            visibility: hidden;
             position: absolute;
             top: -rem(2);
             height: rem(207);
@@ -171,9 +176,6 @@
                 justify-content: center;
             }
         }
-
-        opacity: 0;
-        visibility: hidden;
 
         color: #212121;
         background-color: #ffffff;
@@ -237,7 +239,14 @@
         }
     }
     &._active {
+        @media (max-width: em(680)) {
+            background: linear-gradient(90deg, #449db0 0%, #496ba8 52.92%, #6b519a 100%),
+                linear-gradient(90deg, #449db0 0%, #496ba8 52.92%, #6b519a 100%);
+            background-origin: border-box;
+            background-clip: content-box, border-box, text;
+        }
         background: linear-gradient(273.89deg, rgba(57, 114, 237, 0.52) 48.27%, rgba(50, 212, 239, 0.576) 100%), #5b5b5b;
+
         background-origin: border-box;
         background-clip: content-box, border-box, text;
         .item-use__text {
@@ -401,61 +410,57 @@
             }
         }
     }
+
     @media (max-width: rem(680)) {
-        height: rem(70);
-        display: flex;
-        align-items: center;
-
-        position: relative;
-        &._active {
-            background: linear-gradient(
-                    273.89deg,
-                    rgba(118, 75, 193, 0.616) 24.92%,
-                    rgba(57, 114, 237, 0.52) 48.27%,
-                    rgba(50, 212, 239, 0.576) 100%
-                ),
-                #5b5b5b;
-            background-origin: border-box;
-            background-clip: content-box, border-box, text;
-        }
-
+        padding: 0;
         &::before {
-            top: 12%;
+            top: rem(11);
         }
         &::after {
-            top: 50%;
-            left: 30px;
-            opacity: 1;
-            visibility: visible;
-            transform: translate(0%, -50%) rotate(90deg);
+            display: none;
+            .dark & {
+                display: none;
+            }
         }
-        &__title {
-            margin-left: rem(72);
-            margin-right: rem(72);
 
-            transform: translate(0%, 10%);
+        &__title {
+            height: rem(70);
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-left: rem(72);
+            padding-right: rem(72);
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 46%;
+                left: rem(24);
+                width: rem(15);
+                height: rem(24);
+                transform: translate(0, -50%) rotate(90deg);
+                background-image: url("../../src/images/use/arrow.svg");
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+
+            transform: translate(0%, 2%);
+
+            &._active {
+                &::after {
+                    transform: translate(0, -50%) rotate(270deg);
+                }
+            }
         }
         &__text {
-            display: block;
-            position: absolute;
-            width: calc(100% + rem(4));
-            top: 100%;
-            left: rem(-2);
-            z-index: 2;
-            // height: calc(200% + rem(27));
-            opacity: 0;
-            overflow: auto;
-            transform: translate(0, -30%);
-            transition: all 0.3s ease;
-            padding: rem(10) rem(40) rem(30) rem(40);
-            ._active & {
-                opacity: 1;
-                visibility: visible;
-                transform: translate(0, 0%);
-                transition: transform 0.3s ease;
+            padding: rem(0) rem(12) rem(14) rem(12);
+            border: none;
+            html.dark & {
+                border: none;
             }
         }
     }
+
     ._touch & {
         @media (max-width: em(1279)) {
             @media (min-width: em(681)) {

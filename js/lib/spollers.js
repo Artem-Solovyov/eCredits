@@ -179,8 +179,13 @@ if (spollersArray.length > 0) {
       if (!spollersBlock.querySelectorAll("._slide").length) {
         if (oneSpoller && !spollerTitle.classList.contains("_active")) {
           hideSpollersBody(spollersBlock);
+          if (spollerTitle.classList.contains("_active")) {
+            spollerTitle.classList.remove("_active");
+          }
         }
         spollerTitle.classList.toggle("_active");
+
+        spollerTitle.parentNode.classList.toggle("_active");
         _slideToggle(spollerTitle.nextElementSibling, 500);
       }
       e.preventDefault();

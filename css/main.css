@@ -334,7 +334,7 @@ body._lock {
 }
 .btn_1 {
   color: #fff;
-  background: linear-gradient(273.89deg, rgba(118, 75, 193, 0.616) 24.92%, rgba(57, 114, 237, 0.52) 48.27%, rgba(50, 212, 239, 0.576) 100%), #5b5b5b;
+  background: linear-gradient(90deg, #449db0 0%, #496ba8 52.92%, #6b519a 100%);
 }
 @media (any-hover: hover) {
   .btn_1:hover {
@@ -345,7 +345,7 @@ body._lock {
   position: relative;
   padding: 0.625rem 1.375rem;
   border: solid 2px transparent;
-  background: linear-gradient(273.89deg, rgba(118, 75, 193, 0.616) 24.92%, rgba(57, 114, 237, 0.52) 48.27%, rgba(50, 212, 239, 0.576) 100%), linear-gradient(273.89deg, rgba(118, 75, 193, 0.616) 24.92%, rgba(57, 114, 237, 0.52) 48.27%, rgba(50, 212, 239, 0.576) 100%);
+  background: linear-gradient(90deg, #449db0 0%, #496ba8 52.92%, #6b519a 100%), linear-gradient(90deg, #449db0 0%, #496ba8 52.92%, #6b519a 100%);
   background-origin: border-box;
   background-clip: content-box, border-box, text;
 }
@@ -1862,7 +1862,6 @@ html.dark .item-use {
   font-size: 1.25rem;
   line-height: 1.2;
   letter-spacing: 0.01em;
-  pointer-events: none;
   transition: transform 0.3s ease;
 }
 @media (max-width: 48em) {
@@ -1877,13 +1876,16 @@ html.dark .item-use {
             );
   }
 }
+@media (min-width: 42.5625em) {
+  .item-use__title {
+    pointer-events: none;
+  }
+}
 .item-use__text {
   overflow: auto;
   font-family: "Cascadia Code";
   line-height: 1.4;
   font-size: 1rem;
-  opacity: 0;
-  visibility: hidden;
   color: #212121;
   background-color: #ffffff;
   cursor: pointer;
@@ -1911,6 +1913,8 @@ html.dark .item-use {
 }
 @media (min-width: 42.5625em) {
   .item-use__text {
+    opacity: 0;
+    visibility: hidden;
     position: absolute;
     top: -rem(2);
     height: 12.9375rem;
@@ -1979,6 +1983,13 @@ html.dark .item-use__text {
   background-origin: border-box;
   background-clip: content-box, border-box, text;
   border: 2px solid transparent;
+}
+@media (max-width: 42.5em) {
+  .item-use._active {
+    background: linear-gradient(90deg, #449db0 0%, #496ba8 52.92%, #6b519a 100%), linear-gradient(90deg, #449db0 0%, #496ba8 52.92%, #6b519a 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box, text;
+  }
 }
 .item-use._active .item-use__text {
   opacity: 1;
@@ -2124,49 +2135,47 @@ html.dark .item-use::before {
 }
 @media (max-width: 42.5rem) {
   .item-use {
+    padding: 0;
+  }
+  .item-use::before {
+    top: 0.6875rem;
+  }
+  .item-use::after {
+    display: none;
+  }
+  .dark .item-use::after {
+    display: none;
+  }
+  .item-use__title {
     height: 4.375rem;
     display: flex;
     align-items: center;
     position: relative;
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+    transform: translate(0%, 2%);
   }
-  .item-use._active {
-    background: linear-gradient(273.89deg, rgba(118, 75, 193, 0.616) 24.92%, rgba(57, 114, 237, 0.52) 48.27%, rgba(50, 212, 239, 0.576) 100%), #5b5b5b;
-    background-origin: border-box;
-    background-clip: content-box, border-box, text;
+  .item-use__title::after {
+    content: "";
+    position: absolute;
+    top: 46%;
+    left: 1.5rem;
+    width: 0.9375rem;
+    height: 1.5rem;
+    transform: translate(0, -50%) rotate(90deg);
+    background-image: url("../../src/images/use/arrow.svg");
+    transition: all 0.3s ease;
+    cursor: pointer;
   }
-  .item-use::before {
-    top: 12%;
-  }
-  .item-use::after {
-    top: 50%;
-    left: 30px;
-    opacity: 1;
-    visibility: visible;
-    transform: translate(0%, -50%) rotate(90deg);
-  }
-  .item-use__title {
-    margin-left: 4.5rem;
-    margin-right: 4.5rem;
-    transform: translate(0%, 10%);
+  .item-use__title._active::after {
+    transform: translate(0, -50%) rotate(270deg);
   }
   .item-use__text {
-    display: block;
-    position: absolute;
-    width: calc(100% + 0.25rem);
-    top: 100%;
-    left: -0.125rem;
-    z-index: 2;
-    opacity: 0;
-    overflow: auto;
-    transform: translate(0, -30%);
-    transition: all 0.3s ease;
-    padding: 0.625rem 2.5rem 1.875rem 2.5rem;
+    padding: 0rem 0.75rem 0.875rem 0.75rem;
+    border: none;
   }
-  ._active .item-use__text {
-    opacity: 1;
-    visibility: visible;
-    transform: translate(0, 0%);
-    transition: transform 0.3s ease;
+  html.dark .item-use__text {
+    border: none;
   }
 }
 @media (max-width: 79.9375em) and (min-width: 42.5625em) {
