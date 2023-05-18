@@ -2752,7 +2752,7 @@ html.dark .item-use::before {
   display: block;
   position: relative;
   z-index: 3;
-  background-image: url("../src/images/company/blocktrade.svg");
+  background-image: url("../src/images/company/blocktrade.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2760,7 +2760,7 @@ html.dark .item-use::before {
   height: 5.75rem;
 }
 .dark .company__item-blocktaride::after {
-  background-image: url("../src/images/company/blocktrade_dark.svg");
+  background-image: url("../src/images/company/blocktrade_dark.png");
 }
 @media (max-width: 48em) {
   .company__item-blocktaride::after {
@@ -2791,7 +2791,7 @@ html.dark .item-use::before {
   display: block;
   position: relative;
   z-index: 3;
-  background-image: url("../src/images/company/peoples.svg");
+  background-image: url("../src/images/company/peoples.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2799,7 +2799,7 @@ html.dark .item-use::before {
   height: 5.75rem;
 }
 .dark .company__item-peoples::after {
-  background-image: url("../src/images/company/peoples_dark.svg");
+  background-image: url("../src/images/company/peoples_dark.png");
 }
 @media (max-width: 48em) {
   .company__item-peoples::after {
@@ -2830,7 +2830,7 @@ html.dark .item-use::before {
   display: block;
   position: relative;
   z-index: 3;
-  background-image: url("../src/images/company/cryptix.svg");
+  background-image: url("../src/images/company/cryptix.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2838,7 +2838,7 @@ html.dark .item-use::before {
   height: 5.75rem;
 }
 .dark .company__item-criptix::after {
-  background-image: url("../src/images/company/cryptix_dark.svg");
+  background-image: url("../src/images/company/cryptix_dark.png");
 }
 @media (max-width: 48em) {
   .company__item-criptix::after {
@@ -2941,7 +2941,7 @@ html.dark .item-use::before {
   display: block;
   position: relative;
   z-index: 3;
-  background-image: url("../src/images/company/ecredits.svg");
+  background-image: url("../src/images/company/ecredits.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2949,7 +2949,7 @@ html.dark .item-use::before {
   height: 5.75rem;
 }
 .dark .company__item-ecredits::after {
-  background-image: url("../src/images/company/ecredits_dark.svg");
+  background-image: url("../src/images/company/ecredits_dark.png");
 }
 @media (max-width: 48em) {
   .company__item-ecredits::after {
@@ -2980,7 +2980,7 @@ html.dark .item-use::before {
   display: block;
   position: relative;
   z-index: 3;
-  background-image: url("../src/images/company/ancore.svg");
+  background-image: url("../src/images/company/ancore.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2988,7 +2988,7 @@ html.dark .item-use::before {
   height: 5.75rem;
 }
 .dark .company__item-ancore::after {
-  background-image: url("../src/images/company/ancore_dark.svg");
+  background-image: url("../src/images/company/ancore_dark.png");
 }
 @media (max-width: 48em) {
   .company__item-ancore::after {
@@ -3019,7 +3019,7 @@ html.dark .item-use::before {
   display: block;
   position: relative;
   z-index: 3;
-  background-image: url("../src/images/company/equito.svg");
+  background-image: url("../src/images/company/equito.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -3027,7 +3027,7 @@ html.dark .item-use::before {
   height: 5.75rem;
 }
 .dark .company__item-equito::after {
-  background-image: url("../src/images/company/equito_dark.svg");
+  background-image: url("../src/images/company/equito_dark.png");
 }
 @media (max-width: 48em) {
   .company__item-equito::after {
@@ -3058,7 +3058,7 @@ html.dark .item-use::before {
   display: block;
   position: relative;
   z-index: 3;
-  background-image: url("../src/images/company/bittrex.svg");
+  background-image: url("../src/images/company/bittrex.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -3066,7 +3066,7 @@ html.dark .item-use::before {
   height: 5.75rem;
 }
 .dark .company__item-bittrex::after {
-  background-image: url("../src/images/company/bittrex_dark.svg");
+  background-image: url("../src/images/company/bittrex_dark.png");
 }
 @media (max-width: 48em) {
   .company__item-bittrex::after {
