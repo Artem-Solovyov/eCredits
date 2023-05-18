@@ -40,7 +40,12 @@
                 rgba(57, 114, 237, 0.52) 48.27%,
                 rgba(50, 212, 239, 0.576) 100%
             ),
-            #5b5b5b;
+            linear-gradient(
+                273.89deg,
+                rgba(118, 75, 193, 0.616) 24.92%,
+                rgba(57, 114, 237, 0.52) 48.27%,
+                rgba(50, 212, 239, 0.576) 100%
+            );
         background-origin: border-box;
         background-clip: content-box, border-box, text;
         html.light & {
