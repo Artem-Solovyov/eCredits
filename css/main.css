@@ -38,6 +38,7 @@
   margin: 0;
   border: 0;
   box-sizing: border-box;
+  outline: none;
 }
 
 a {
@@ -268,7 +269,7 @@ body {
   font-size: 1rem;
   color: #1c1f25;
   overflow-x: hidden;
-  transition: all 0.4s ease;
+  transition: color 0.4s ease, background-color 0.4s ease;
 }
 
 .wrapper {
@@ -291,6 +292,10 @@ html.dark body {
 
 body._lock {
   overflow: hidden;
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
 }
 
 ._ibg {
@@ -448,6 +453,21 @@ html.dark .btn_2 {
     transition: all 0.2s ease;
     color: #fff;
     background: linear-gradient(273.89deg, rgba(118, 75, 193, 0.616) 24.92%, rgba(57, 114, 237, 0.52) 48.27%, rgba(50, 212, 239, 0.576) 100%), #5b5b5b;
+  }
+}
+
+.submit {
+  padding: 0.75rem 1.5rem;
+  font-family: "Cascadia Code";
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  background: linear-gradient(90deg, #449db0 0%, #496ba8 52.92%, #6b519a 100%);
+  color: #fff;
+}
+@media (any-hover: hover) {
+  .submit:hover {
+    background: linear-gradient(273.89deg, rgba(118, 75, 193, 0.616) 24.92%, rgba(57, 114, 237, 0.52) 48.27%, rgba(50, 212, 239, 0.576) 100%), #3f3f3f;
   }
 }
 
@@ -3267,7 +3287,7 @@ html.dark .item-use::before {
   visibility: hidden;
   overflow-y: auto;
   overflow-x: hidden;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
   z-index: 100;
 }
 
@@ -3292,23 +3312,157 @@ html.dark .item-use::before {
 .callback__form {
   background-color: #fff;
   color: #333;
-  max-width: 600px;
   padding: 1rem 1.5rem;
   position: relative;
   transition: all 0.3s ease;
   opacity: 0;
   transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
 }
+.dark .callback__form {
+  color: #fff;
+  background: #1c1f25;
+}
 
 body.lock {
   overflow: hidden;
 }
 
+.form-callback {
+  max-width: 21.875rem;
+}
 .form-callback__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 2rem;
+  column-gap: 10.3125rem;
 }
+@media (max-width: 20em) {
+  .form-callback__header {
+    padding-bottom: 1.125rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 80em) {
+  .form-callback__header {
+    padding-bottom: calc(
+                1.125rem + 14 * ((100vw - 20rem) / 960)
+            );
+  }
+}
+@media (max-width: 20em) {
+  .form-callback__header {
+    column-gap: 5rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 80em) {
+  .form-callback__header {
+    column-gap: calc(
+                5rem + 85 * ((100vw - 20rem) / 960)
+            );
+  }
+}
+.form-callback__title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.form__item:not(:last-child) {
+  margin-bottom: 1.5625rem;
+}
+@media (max-width: 20em) {
+  .form__item:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 80em) {
+  .form__item:not(:last-child) {
+    margin-bottom: calc(
+                1rem + 9 * ((100vw - 20rem) / 960)
+            );
+  }
+}
+.form__item textarea {
+  height: auto !important;
+  min-height: 6.0625rem;
+  resize: none;
+}
+.form__input {
+  font-family: "Cascadia Code";
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.4;
+  width: 100% !important;
+  border: 1px solid #e3e6ec;
+  padding: 0.5rem;
+}
+.dark .form__input {
+  border: 1px solid #3a3a3a;
+  color: #fff;
+  background: #1c1f25;
+}
+.form__input:focus {
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(90deg, #449db0 0%, #496ba8 52.92%, #6b519a 100%) 1;
+}
+.form__input._error {
+  box-shadow: 0 2px 4px rgba(255, 0, 0, 0.514);
+}
+.form__input::placeholder {
+  font-family: "Cascadia Code";
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.4;
+  color: #1c1f25;
+}
+.dark .form__input::placeholder {
+  color: rgba(255, 255, 255, 0.9529411765);
+}
+.form__button {
+  margin: 0 auto;
+}
+.form .preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(49, 48, 48, 0.87);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form .preloader .svg {
+  width: 1.875rem !important;
+  height: 1.875rem !important;
+}
+.form__recaptcha {
+  text-align: center;
+  padding: 0 0.9375rem;
+  padding-top: 1rem;
+  font-family: "Cascadia Code";
+  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+@media (max-width: 23.4375em) {
+  .form__recaptcha {
+    padding: 0 0.875rem;
+  }
+}
+.form._sending .preloader {
+  visibility: visible;
+  opacity: 1;
+}
+
 .lottie {
   width: 300px;
   height: 300px;

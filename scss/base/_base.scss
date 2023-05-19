@@ -88,7 +88,7 @@ body {
     font-size: rem(16);
     color: $mainDarkColor;
     overflow-x: hidden;
-    transition: all 0.4s ease;
+    transition: color 0.4s ease, background-color 0.4s ease;
 }
 .wrapper {
     background-image: url(../../src/images/bg/Noise.png);
@@ -110,4 +110,7 @@ html.dark {
 }
 body._lock {
     overflow: hidden;
+}
+.grecaptcha-badge {
+    visibility: hidden;
 }

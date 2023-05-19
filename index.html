@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <header class="header">
+      <header class="header lock-padding">
         <div class="header__container">
           <div class="header__logo logo">
             <a href="#" data-goto=".main-block" class="logo__link"> </a>
@@ -620,7 +620,7 @@
               class="form-callback__close callback-popup _icon-close"
             ></a>
           </div>
-          <form action="#" id="form" class="form__body">
+          <form action="#" id="form" class="form">
             <div class="form__item">
               <input
                 type="text"
@@ -646,27 +646,31 @@
                 class="form__input"
               ></textarea>
             </div>
-
-            <!-- добавление элемента div -->
-            <div
-              class="g-recaptcha"
-              data-sitekey="6LdNge8lAAAAALXLlM652hqUD72-OUX_1_zRGNtV"
-            ></div>
-
-            <!-- элемент для вывода ошибок -->
-            <div class="text-danger" id="recaptchaError"></div>
-
-            <button class="form__button" type="submit">Send</button>
+            <input type="hidden" id="token" name="token" />
+            <div class="preloader">
+              <div id="preloader" class="svg"></div>
+            </div>
+            <button class="form__button submit" type="submit">Submit</button>
+            <p class="form__recaptcha">
+              This site is protected by reCAPTCHA and the Google
+              <a href="https://policies.google.com/privacy">Privacy Policy</a
+              ><br />
+              and
+              <a href="https://policies.google.com/terms">Terms of Service</a>
+              apply.
+            </p>
           </form>
         </section>
       </div>
     </div>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcpEiImAAAAADUypC8gn0C4ycvPJWgH_wsMmwx1"></script>
+
     <script src="./js/lib/darkWhite.js"></script>
     <script src="./js/lib/particles.js"></script>
     <script src="./js/lib/ad.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="./js/lib/spollers.js"></script>
-    <!-- <script src="./js/lib/lottie.js"></script> -->
+    <script src="./js/lib/lottie.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>

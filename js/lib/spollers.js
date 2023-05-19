@@ -181,6 +181,7 @@ if (spollersArray.length > 0) {
           hideSpollersBody(spollersBlock);
           if (spollerTitle.classList.contains("_active")) {
             spollerTitle.classList.remove("_active");
+            spollerTitle.parentNode.classList.remove("_active");
           }
         }
         spollerTitle.classList.toggle("_active");
@@ -197,6 +198,7 @@ if (spollersArray.length > 0) {
     );
     if (spollerActiveTitle) {
       spollerActiveTitle.classList.remove("_active");
+      spollerActiveTitle.parentNode.classList.remove("_active");
       _slideUp(spollerActiveTitle.nextElementSibling, 500);
     }
   }

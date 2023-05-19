@@ -1,6 +1,6 @@
 if (document.querySelector(".wrapper").clientWidth > 319) {
-  // particlesJS.load("particles-js", "../json/particles.json", function () {});
-  // particlesJS.load("particles-js-1", "../json/particles.json", function () {});
+  particlesJS.load("particles-js", "../json/particles.json", function () {});
+  particlesJS.load("particles-js-1", "../json/particles.json", function () {});
 }
 
 // funcyion is mobile
@@ -109,7 +109,6 @@ window.addEventListener("unload", function () {
 
 const menuLinks = document.querySelectorAll("[data-goto]");
 if (menuLinks.length > 0) {
-  console.log("Hello");
   menuLinks.forEach((menuLink) => {
     menuLink.addEventListener("click", onMenuLinkClick);
   });
@@ -276,7 +275,7 @@ const body = document.querySelector("body");
 const lockPadding = document.querySelectorAll(".lock-padding");
 
 let unlock = true;
-const timeout = 800;
+const timeout = 300;
 
 if (popupLinks.length > 0) {
   popupLinks.forEach((popupLink) => {
@@ -289,7 +288,7 @@ if (popupLinks.length > 0) {
   });
 }
 
-const popupCloseIcon = document.querySelectorAll(".callback-popup");
+const popupCloseIcon = document.querySelectorAll(".form-callback__close");
 if (popupCloseIcon.length > 0) {
   popupCloseIcon.forEach((el) => {
     el.addEventListener("click", function (e) {
@@ -309,7 +308,7 @@ function popupOpen(curentPopup) {
     }
     curentPopup.classList.add("open");
     curentPopup.addEventListener("click", function (e) {
-      if (!e.target.closest(".callback__content")) {
+      if (!e.target.closest(".callback__form")) {
         popupClose(e.target.closest(".callback"));
       }
     });
@@ -364,7 +363,7 @@ document.addEventListener("keydown", function (e) {
 
 //========================= Lotti start===============================
 
-// const anim = lottie;
+const anim = lottie;
 
 // anim.loadAnimation({
 //   container: document.querySelector("#lottie"),
@@ -373,5 +372,120 @@ document.addEventListener("keydown", function (e) {
 //   autoplay: true,
 //   path: "../json/anim.json",
 // });
+anim.loadAnimation({
+  container: document.querySelector("#preloader"),
+  rendere: "svg",
+  loop: true,
+  autoplay: true,
+  path: "../json/ecredits.json",
+});
 
 //========================= Lotti end===============================
+
+//======================Form start===================================
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("form");
+  let message = "";
+  form.addEventListener("submit", formSend);
+
+  async function formSend(e) {
+    e.preventDefault();
+
+    let error = formValidate(form);
+
+    let formData = new FormData(form);
+
+    if (error === 0) {
+      form.classList.add("_sending");
+
+      let tk = "";
+
+      grecaptcha.ready(function () {
+        grecaptcha
+          .execute("6LcpEiImAAAAADUypC8gn0C4ycvPJWgH_wsMmwx1", {
+            action: "homepage",
+          })
+          .then(function (token) {
+            tk = token;
+            document.getElementById("token").value = token;
+
+            let formData = new FormData(form);
+
+            fetch("send.php", {
+              method: "post",
+              body: formData,
+            })
+              .then((response) => response.json())
+              .then((result) => {
+                if (result["om_score"] >= 0.5) {
+                  console.log(result["om_score"]);
+                  // submit form
+                  document.querySelector(".callback").classList.remove("open");
+                  form.classList.remove("_sending");
+                } else {
+                  form.classList.remove("_sending");
+                }
+              });
+          });
+      });
+
+      // let newForm = new FormData(document.getElementById("form"));
+      // let response = await fetch("../sendmail.php", {
+      //   method: "POST",
+      //   body: newForm,
+      // });
+      // if (response.ok) {
+      //   let result = await response.json();
+      //   alert(result.message);
+      //   document.querySelector(".callback").classList.remove("open");
+      //   form.classList.remove("_sending");
+      // } else {
+      //   alert("Error");
+      //   form.classList.remove("_sending");
+      // }
+    } else {
+      alert(message.length > 0 ? message : "Fill in the required fields");
+    }
+  }
+
+  function formValidate(form) {
+    let error = 0;
+
+    let formReq = document.querySelectorAll("._req");
+
+    formReq.forEach((input, index) => {
+      formRemoveError(input);
+
+      if (input.value === "") {
+        formAddError(input);
+        error++;
+      } else {
+        if (input.classList.contains("_email")) {
+          if (emailTest(input)) {
+            formAddError(input);
+            error++;
+            message = "Mail is invalid";
+          }
+        }
+      }
+    });
+    return error;
+  }
+  // add class error
+  function formAddError(input) {
+    input.parentElement.classList.add("_error");
+    input.classList.add("_error");
+  }
+  // remove class error
+  function formRemoveError(input) {
+    input.parentElement.classList.remove("_error");
+    input.classList.remove("_error");
+  }
+  // Email validation
+  function emailTest(input) {
+    return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+  }
+});
+
+//======================Form end===================================
