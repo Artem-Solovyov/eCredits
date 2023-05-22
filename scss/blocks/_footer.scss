@@ -96,16 +96,12 @@
         color: #fff;
         @media (any-hover: hover) {
             &:hover {
-                background: linear-gradient(
-                        273.89deg,
-                        rgba(118, 75, 193, 0.616) 24.92%,
-                        rgba(57, 114, 237, 0.52) 48.27%,
-                        rgba(50, 212, 239, 0.576) 100%
-                    ),
-                    #5b5b5b;
-                -webkit-background-clip: text;
-                background-clip: text;
-                color: transparent;
+                &::before {
+                    background: linear-gradient(90deg, #449db0 0%, #496ba8 52.92%, #6b519a 100%);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    color: transparent;
+                }
             }
         }
     }
