@@ -708,6 +708,7 @@ html.dark .nav__link {
   border-radius: 2px;
   width: 8.75rem;
   padding: 0.3125rem 0.3125rem 0.1875rem 0rem;
+  transition: background-color 0.1s ease;
 }
 .sub-menu__item:first-child {
   margin-top: 0.5rem;
@@ -716,6 +717,14 @@ html.dark .nav__link {
   background: #1c1f25;
   border-bottom: 1px solid #3a3a3a;
 }
+@media (any-hover: hover) {
+  .sub-menu__item:hover {
+    background: #e3e6ec;
+  }
+  .dark .sub-menu__item:hover {
+    background: #3a3a3a;
+  }
+}
 .sub-menu__link {
   display: block;
   font-family: "Cascadia Code";
@@ -723,12 +732,6 @@ html.dark .nav__link {
   font-size: 1rem;
   line-height: 1.4;
   padding-left: 0.25rem;
-  transition: transform 0.2s ease;
-}
-@media (any-hover: hover) {
-  .sub-menu__link:hover {
-    transform: translate(0.625rem, 0);
-  }
 }
 
 .menu {
@@ -1453,6 +1456,8 @@ html.light .wealth {
   }
 }
 .wealth__body {
+  position: relative;
+  z-index: 4;
   max-width: 36.25rem;
   margin-right: 1.4375rem;
   transform: translate(0px, 6.25rem);
@@ -2046,7 +2051,7 @@ html.dark .item-why {
   cursor: pointer;
   transition: all 0.4s ease;
   border-bottom: 2px solid transparent;
-  background: linear-gradient(273.89deg, rgba(118, 75, 193, 0.616) 24.92%, rgba(57, 114, 237, 0.52) 48.27%, rgba(50, 212, 239, 0.576) 100%), #5b5b5b;
+  background: linear-gradient(90deg, #449db0 0%, #496ba8 52.92%, #6b519a 100%), linear-gradient(90deg, #449db0 0%, #496ba8 52.92%, #6b519a 100%);
   box-shadow: 2px 1000px 1px #fff inset;
   background-origin: border-box;
   background-clip: content-box, border-box, text;

@@ -201,6 +201,15 @@
         border-radius: 2px;
         width: rem(140);
         padding: rem(5) rem(5) rem(3) rem(0);
+        transition: background-color 0.1s ease;
+        @media (any-hover: hover) {
+            &:hover {
+                .dark & {
+                    background: #3a3a3a;
+                }
+                background: #e3e6ec;
+            }
+        }
     }
 
     &__link {
@@ -210,13 +219,6 @@
         font-size: rem(16);
         line-height: 1.4;
         padding-left: rem(4);
-
-        transition: transform 0.2s ease;
-        @media (any-hover: hover) {
-            &:hover {
-                transform: translate(rem(10), 0);
-            }
-        }
     }
 }
 
