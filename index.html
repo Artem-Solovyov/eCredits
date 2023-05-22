@@ -25,10 +25,20 @@
                 <a href="" class="nav__link">Community</a>
               </li>
               <li class="nav__item">
-                <a href="" class="nav__link">Developers</a>
+                <a
+                  href="https://docs.ecredits.com/#/"
+                  target="_blank"
+                  class="nav__link"
+                  >Developers</a
+                >
               </li>
               <li class="nav__item">
-                <a href="" class="nav__link">Whitepaper</a>
+                <a
+                  href="https://github.com/eCredits/whitepaper/blob/main/eCredits-whitepaper.pdf"
+                  target="_blank"
+                  class="nav__link"
+                  >Whitepaper</a
+                >
               </li>
             </ul>
           </nav>
@@ -54,10 +64,16 @@
                   On a mission to onboard millions of people to blockchain.
                 </h3>
                 <div class="main-block__actions actions-main-block">
-                  <a href="" class="actions-main-block__button btn btn_1"
+                  <a
+                    href=""
+                    data-goto=".page__ready"
+                    class="actions-main-block__button btn btn_1"
                     >Start building</a
                   >
-                  <a href="" class="actions-main-block__button btn btn_2"
+                  <a
+                    href="#"
+                    data-goto=".page__wealth"
+                    class="actions-main-block__button btn btn_2"
                     ><span>Learn about $ECS</span></a
                   >
                 </div>
@@ -108,7 +124,6 @@
               </article>
             </div>
           </div>
-
           <section class="page__wealth wealth">
             <div class="wealth__container">
               <div class="wealth__body">
@@ -133,14 +148,19 @@
                   </p>
                 </div>
                 <div class="wealth__actions actions-wealth">
-                  <a href="" class="actions-wealth__button btn btn_1"
+                  <a
+                    href="https://docs.ecredits.com/#/"
+                    target="_blank"
+                    class="actions-wealth__button btn btn_1"
                     >Start building</a
                   >
+
                   <a
                     href=""
-                    class="actions-wealth__button btn btn_2 btn_2_black"
-                    ><span>Learn about $ECS</span></a
-                  >
+                    data-popup="#callback"
+                    class="actions-wealth__buttonn btn btn_2 btn_2_black"
+                    ><span>Get in touch</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -235,6 +255,40 @@
                 </div>
               </article>
             </div>
+          </div>
+        </section>
+        <section class="page__ready ready">
+          <div class="ready__container">
+            <section class="ready__body">
+              <h2 class="ready__title">
+                Ready for your next tokenization project?
+              </h2>
+              <div class="ready__text">
+                <p>
+                  The eCredits Layer 1 blockchain is built with tokenization in
+                  mind. One of our partner companies, Equito is utilizing our
+                  blockchain to tokenize and streamline retail investments into
+                  private companies, real-estate, stocks, ETFs and more.<br /><br />
+                  The tokenization services are available through our technical
+                  partner – Cryptix AG.<br /><br />
+                  Whether you would like to build out a dedicated solution for
+                  tokenization or utilize the existing infrastructure, we
+                  welcome the opportunity to work with you.<br /><br />
+                  As an added benefit, our ecosystem comes with several hundred
+                  thousands of users, with whom you can test your solution or
+                  even captivate then as your future clients.
+                </p>
+              </div>
+              <div class="building__btn">
+                <a
+                  href=""
+                  data-popup="#callback"
+                  class="building__button btn btn_1"
+                  >Get in touch</a
+                >
+              </div>
+            </section>
+            <div id="ready__anim" class="ready__anim"></div>
           </div>
         </section>
         <section class="page__use use">
@@ -570,7 +624,9 @@
                 <div class="item-faq__text">
                   <p>
                     The first step would be to check out our docs section here:
-                    docs.ecredits.com
+                    <a href="https://docs.ecredits.com/#/" target="_blank"
+                      >docs.ecredits.com</a
+                    >
                   </p>
                 </div>
               </article>
@@ -607,7 +663,68 @@
             </div>
           </div>
         </section>
-        <!-- <div id="lottie" class="lottie">Lottie</div> -->
+        <footer class="page__footer footer">
+          <div class="footer__container">
+            <nav class="footer__nav nav-footer">
+              <ul class="nav-footer__list">
+                <!-- <li class="nav-footer__item">
+                  <a href="" class="nav-footer__link">Community</a>
+                </li> -->
+                <li class="nav-footer__item">
+                  <a
+                    target="_blank"
+                    href="https://docs.ecredits.com/#/"
+                    class="nav-footer__link"
+                    >Developers</a
+                  >
+                </li>
+                <li class="nav-footer__item">
+                  <a
+                    target="_blank"
+                    href="https://github.com/eCredits/whitepaper/blob/main/eCredits-whitepaper.pdf"
+                    class="nav-footer__link"
+                    >Whitepaper</a
+                  >
+                </li>
+                <li class="nav-footer__item">
+                  <a href="" class="nav-footer__link">Terms and Conditions</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="nav-footer__social social">
+              <a
+                target="_blank"
+                href="https://www.youtube.com/channel/UCWIyeUd2DPTNnpcScrrEYMg"
+                class="social_item _icon-youTube"
+              ></a>
+              <a
+                target="_blank"
+                href="https://t.me/ecredits_com "
+                class="social_item _icon-telegram"
+              ></a>
+              <a
+                target="_blank"
+                href="https://www.instagram.com/ecredits_com/ "
+                class="social_item _icon-instagram"
+              ></a>
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/company/ecredits/"
+                class="social_item _icon-in"
+              ></a>
+              <a
+                target="_blank"
+                href="https://www.facebook.com/ecredits.official"
+                class="social_item _icon-facebook"
+              ></a>
+              <a
+                target="_blank"
+                href="https://twitter.com/eCredits_com"
+                class="social_item _icon-twitter"
+              ></a>
+            </div>
+          </div>
+        </footer>
       </main>
     </div>
     <div id="callback" class="callback">
@@ -664,7 +781,6 @@
       </div>
     </div>
     <script src="https://www.google.com/recaptcha/api.js?render=6LcpEiImAAAAADUypC8gn0C4ycvPJWgH_wsMmwx1"></script>
-
     <script src="./js/lib/darkWhite.js"></script>
     <script src="./js/lib/particles.js"></script>
     <script src="./js/lib/ad.js"></script>

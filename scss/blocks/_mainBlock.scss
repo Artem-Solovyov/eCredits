@@ -70,6 +70,9 @@
     &__button {
         flex: 0 0 content;
     }
+    span {
+        pointer-events: none;
+    }
 }
 
 //  Dark mainBlock

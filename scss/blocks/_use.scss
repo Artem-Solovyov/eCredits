@@ -1,5 +1,5 @@
 .use {
-    @include adaptive-value("padding-top", 60, 30, 1);
+    @include adaptive-value("padding-top", 60, 40, 1);
     @include adaptive-value("padding-bottom", 120, 60, 1, 768);
     @media (max-width: $tablet) {
         @include adaptive-value("padding-bottom", 60, 40, 1, 320, 768);

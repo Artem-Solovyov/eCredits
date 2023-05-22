@@ -1,0 +1,55 @@
+.page {
+    &__ready {
+    }
+}
+.ready {
+    @include adaptive-value("padding-top", 60, 40, 1, 320, 768);
+    @include adaptive-value("padding-bottom", 60, 40, 1);
+    &__container {
+        display: flex;
+        @include adaptive-value("column-gap", 32, 16, 1, 768);
+        @media (max-width: em(680)) {
+            flex-direction: column;
+            row-gap: rem(36);
+        }
+    }
+
+    &__body {
+        flex: 0 0 50%;
+    }
+
+    &__title {
+        font-weight: 400;
+        @include adaptive-value("font-size", 36, 24, 1, 768);
+
+        @media (max-width: em(768)) {
+            @include adaptive-value("font-size", 24, 20, 1, 320, 768);
+        }
+        &:not(:last-child) {
+            margin-bottom: rem(16);
+        }
+        letter-spacing: 0.01em;
+    }
+
+    &__text {
+        &:not(:last-child) {
+            margin-bottom: rem(36);
+            font-family: "Cascadia Code";
+            font-weight: 300;
+            @include adaptive-value("font-size", 16, 14, 1, 768);
+            line-height: 1.4;
+        }
+    }
+
+    &__anim {
+    }
+}
+.building {
+    &__btn {
+    }
+
+    &__button {
+    }
+}
+.button {
+}

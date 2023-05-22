@@ -65,6 +65,24 @@ $textDarcColor: #212121;
 ._icon-close:before {
     content: "\e907";
 }
+._icon-facebook:before {
+    content: "\e908";
+}
+._icon-in:before {
+    content: "\e909";
+}
+._icon-instagram:before {
+    content: "\e90a";
+}
+._icon-telegram:before {
+    content: "\e90b";
+}
+._icon-twitter:before {
+    content: "\e90c";
+}
+._icon-youTube:before {
+    content: "\e90d";
+}
 
 [class*="__container"] {
     max-width: rem($maxWidthContainer);

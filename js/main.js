@@ -365,13 +365,13 @@ document.addEventListener("keydown", function (e) {
 
 const anim = lottie;
 
-// anim.loadAnimation({
-//   container: document.querySelector("#lottie"),
-//   rendere: "svg",
-//   loop: true,
-//   autoplay: true,
-//   path: "../json/anim.json",
-// });
+anim.loadAnimation({
+  container: document.querySelector("#ready__anim"),
+  rendere: "svg",
+  loop: true,
+  autoplay: true,
+  path: "../json/anim_block.json",
+});
 anim.loadAnimation({
   container: document.querySelector("#preloader"),
   rendere: "svg",

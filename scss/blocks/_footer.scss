@@ -1,0 +1,112 @@
+.page {
+    &__footer {
+    }
+}
+.footer {
+    background: #1c1f25;
+    &__container {
+        @include adaptive-value("padding-top", 36, 24, 1, 768);
+        @media (max-width: $tablet) {
+            @include adaptive-value("padding-top", 24, 16, 1, 320, 768);
+        }
+        @include adaptive-value("padding-bottom", 36, 24, 1, 768);
+        @media (max-width: $tablet) {
+            @include adaptive-value("padding-bottom", 24, 16, 1, 320, 768);
+        }
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (max-width: em(1030)) and (min-width: em(541)) {
+            flex-direction: column;
+            @include adaptive-value("row-gap", 24, 16, 1, 320, 768);
+        }
+        @media (max-width: em(540)) {
+            align-items: flex-start;
+            flex-direction: column;
+            row-gap: rem(16);
+        }
+    }
+
+    &__nav {
+    }
+}
+.nav-footer {
+    transform: translate(0, rem(3));
+    &__list {
+        font-family: "Cascadia Code";
+        font-weight: 300;
+        @include adaptive-value("font-size", 16, 14, 1, 768);
+        line-height: 1.4;
+        color: #fff;
+        display: flex;
+        column-gap: rem(32);
+        @media (max-width: em(1030)) and (min-width: em(541)) {
+            @include adaptive-value("column-gap", 80, 0, 1, 320, 1030);
+        }
+        @media (max-width: em(540)) {
+            align-items: flex-start;
+            flex-direction: column;
+            row-gap: rem(16);
+        }
+    }
+
+    &__item {
+    }
+
+    &__link {
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: rem(-6);
+            left: 0;
+            width: 100%;
+            height: rem(1);
+            background: linear-gradient(
+                    273.89deg,
+                    rgba(118, 75, 193, 0.616) 24.92%,
+                    rgba(57, 114, 237, 0.52) 48.27%,
+                    rgba(50, 212, 239, 0.576) 100%
+                ),
+                #5b5b5b;
+            transform: scale(0);
+            transition: transform 0.3s ease;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                &::after {
+                    transform: scale(1);
+                    transition: transform 0.3s ease;
+                }
+            }
+        }
+    }
+
+    &__social {
+    }
+}
+.social {
+    transform: translate(0, rem(3));
+    display: flex;
+    align-items: center;
+    @include adaptive-value("column-gap", 32, 16, 1, 320, 768);
+    &_item {
+        font-size: rem(32);
+        color: #fff;
+        @media (any-hover: hover) {
+            &:hover {
+                background: linear-gradient(
+                        273.89deg,
+                        rgba(118, 75, 193, 0.616) 24.92%,
+                        rgba(57, 114, 237, 0.52) 48.27%,
+                        rgba(50, 212, 239, 0.576) 100%
+                    ),
+                    #5b5b5b;
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+        }
+    }
+}
