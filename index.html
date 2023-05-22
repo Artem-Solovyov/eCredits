@@ -21,8 +21,58 @@
           </div>
           <nav data-da=".menu__body,768,first" class="header__nav nav">
             <ul class="nav__list">
-              <li class="nav__item">
-                <a href="" class="nav__link">Community</a>
+              <li class="nav__item nav__item_click">
+                <div class="nav__link">Community</div>
+                <ul class="nav__sub-menu sub-menu">
+                  <li class="sub-menu__item">
+                    <a
+                      target="_blank"
+                      href="https://www.facebook.com/ecredits.official"
+                      class="sub-menu__link"
+                      >Facebook</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      target="_blank"
+                      href="https://www.instagram.com/ecredits_com/ "
+                      class="sub-menu__link"
+                      >Instagram</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      target="_blank"
+                      href="https://t.me/ecredits_com "
+                      class="sub-menu__link"
+                      >Telegram</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      target="_blank"
+                      href="https://www.linkedin.com/company/ecredits/"
+                      class="sub-menu__link"
+                      >Linkedin</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      target="_blank"
+                      href="https://twitter.com/eCredits_com"
+                      class="sub-menu__link"
+                      >Twitter</a
+                    >
+                  </li>
+                  <li class="sub-menu__item">
+                    <a
+                      target="_blank"
+                      href="https://www.youtube.com/channel/UCWIyeUd2DPTNnpcScrrEYMg"
+                      class="sub-menu__link"
+                      >Youtube</a
+                    >
+                  </li>
+                </ul>
               </li>
               <li class="nav__item">
                 <a
@@ -42,12 +92,57 @@
               </li>
             </ul>
           </nav>
-          <button data-da=".menu__body,768" class="header__theme"></button>
+          <button data-da=".menu__body,768,1" class="header__theme"></button>
           <div hidden class="menu">
             <button type="button" class="menu__icon icon-menu">
               <span></span>
             </button>
-            <div class="menu__body"></div>
+            <div class="menu__body">
+              <ul class="menu__list">
+                <li class="menu__item">
+                  <a
+                    target="_blank"
+                    href="https://www.youtube.com/channel/UCWIyeUd2DPTNnpcScrrEYMg"
+                    class="menu__link _icon-youTube"
+                  ></a>
+                </li>
+                <li class="menu__item">
+                  <a
+                    target="_blank"
+                    href="https://t.me/ecredits_com "
+                    class="menu__link _icon-telegram"
+                  ></a>
+                </li>
+                <li class="menu__item">
+                  <a
+                    target="_blank"
+                    href="https://www.instagram.com/ecredits_com/ "
+                    class="menu__link _icon-instagram"
+                  ></a>
+                </li>
+                <li class="menu__item">
+                  <a
+                    target="_blank"
+                    href="https://www.linkedin.com/company/ecredits/"
+                    class="menu__link _icon-in"
+                  ></a>
+                </li>
+                <li class="menu__item">
+                  <a
+                    target="_blank"
+                    href="https://www.facebook.com/ecredits.official"
+                    class="menu__link _icon-facebook"
+                  ></a>
+                </li>
+                <li class="menu__item">
+                  <a
+                    target="_blank"
+                    href="https://twitter.com/eCredits_com"
+                    class="menu__link _icon-twitter"
+                  ></a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </header>
@@ -55,7 +150,7 @@
         <div id="particles-js" class="bg">
           <section class="page__main-block main-block">
             <div class="main-block__container">
-              <div class="main-block__body">
+              <div class="main-block__body _anim-item _anim-no-hide">
                 <div class="main-block__text">Built in Europe</div>
                 <h1 class="main-block__title">
                   An EVM Layer 1 chain you can trust
@@ -126,7 +221,7 @@
           </div>
           <section class="page__wealth wealth">
             <div class="wealth__container">
-              <div class="wealth__body">
+              <div class="wealth__body _anim-item _anim-no-hide">
                 <h2 hidden>Wealth, tokenized and distributed.</h2>
                 <div class="wealth__title_2">
                   <img src="./src/images/wealth/word.svg" alt="Title" />
@@ -259,7 +354,7 @@
         </section>
         <section class="page__ready ready">
           <div class="ready__container">
-            <section class="ready__body">
+            <section class="ready__body _anim-item _anim-no-hide">
               <h2 class="ready__title">
                 Ready for your next tokenization project?
               </h2>
@@ -501,13 +596,13 @@
         </section>
         <section id="particles-js-1" class="page__company company">
           <div class="company__container">
-            <div class="company__row">
+            <div class="company__row _anim-item _anim-no-hide">
               <div class="company__block">
                 <div class="company__item-rocksolid"></div>
                 <div class="company__item-blocktaride"></div>
               </div>
             </div>
-            <div class="company__row">
+            <div class="company__row _anim-item _anim-no-hide">
               <div class="company__block">
                 <div class="company__item-peoples"></div>
                 <div class="company__item-criptix"></div>
@@ -523,7 +618,7 @@
                 <div class="company__item-ancore"></div>
               </div>
             </div>
-            <div class="company__row">
+            <div class="company__row _anim-item _anim-no-hide">
               <div class="company__block">
                 <div class="company__item-equito"></div>
                 <div class="company__item-bittrex"></div>
@@ -658,6 +753,12 @@
                 </h3>
                 <div class="item-faq__text">
                   <p>Learn more about our chain here:</p>
+                  <a
+                    href="#"
+                    data-goto=".page__wealth"
+                    class="actions-main-block__button btn btn_2"
+                    ><span>Learn about $ECS</span></a
+                  >
                 </div>
               </article>
             </div>
@@ -691,38 +792,50 @@
                 </li>
               </ul>
             </nav>
-            <div class="nav-footer__social social">
-              <a
-                target="_blank"
-                href="https://www.youtube.com/channel/UCWIyeUd2DPTNnpcScrrEYMg"
-                class="social_item _icon-youTube"
-              ></a>
-              <a
-                target="_blank"
-                href="https://t.me/ecredits_com "
-                class="social_item _icon-telegram"
-              ></a>
-              <a
-                target="_blank"
-                href="https://www.instagram.com/ecredits_com/ "
-                class="social_item _icon-instagram"
-              ></a>
-              <a
-                target="_blank"
-                href="https://www.linkedin.com/company/ecredits/"
-                class="social_item _icon-in"
-              ></a>
-              <a
-                target="_blank"
-                href="https://www.facebook.com/ecredits.official"
-                class="social_item _icon-facebook"
-              ></a>
-              <a
-                target="_blank"
-                href="https://twitter.com/eCredits_com"
-                class="social_item _icon-twitter"
-              ></a>
-            </div>
+            <ul class="nav-footer__social social">
+              <li>
+                <a
+                  target="_blank"
+                  href="https://www.youtube.com/channel/UCWIyeUd2DPTNnpcScrrEYMg"
+                  class="social_item _icon-youTube"
+                ></a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://t.me/ecredits_com "
+                  class="social_item _icon-telegram"
+                ></a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://www.instagram.com/ecredits_com/ "
+                  class="social_item _icon-instagram"
+                ></a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/company/ecredits/"
+                  class="social_item _icon-in"
+                ></a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://www.facebook.com/ecredits.official"
+                  class="social_item _icon-facebook"
+                ></a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://twitter.com/eCredits_com"
+                  class="social_item _icon-twitter"
+                ></a>
+              </li>
+            </ul>
           </div>
         </footer>
       </main>

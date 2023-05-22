@@ -107,6 +107,11 @@ body {
     color: $mainDarkColor;
     overflow-x: hidden;
     transition: color 0.4s ease, background-color 0.4s ease;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    &.loaded {
+        opacity: 1;
+    }
 }
 .wrapper {
     background-image: url(../../src/images/bg/Noise.png);

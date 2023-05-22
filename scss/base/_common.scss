@@ -117,6 +117,7 @@
         }
 
         & span {
+            pointer-events: none;
             background: linear-gradient(
                     273.89deg,
                     rgba(118, 75, 193, 0.616) 24.92%,

@@ -1,3 +1,9 @@
+window.addEventListener("load", loaded);
+const bodyEl = document.body;
+function loaded() {
+  bodyEl.classList.add("loaded");
+}
+
 if (document.querySelector(".wrapper").clientWidth > 319) {
   particlesJS.load("particles-js", "../json/particles.json", function () {});
   particlesJS.load("particles-js-1", "../json/particles.json", function () {});
@@ -43,6 +49,14 @@ if (!isMobile.any()) {
   document.body.classList.add("_touch");
 }
 
+if (isMobile.any()) {
+  document
+    .querySelector(".nav__item_click")
+    .addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(".nav__item_click").classList.toggle("_active");
+    });
+}
 // ibg image
 
 function ibg() {
@@ -70,7 +84,42 @@ if (iconMenu) {
 }
 
 //============Menu burger end===========================================================
+//============animation start===========================================================
 
+const animItems = document.querySelectorAll("._anim-item");
+
+if (animItems.length > 0) {
+  window.addEventListener("scroll", animOnScroll);
+  function animOnScroll(params) {
+    for (let index = 0; index < animItems.length; index++) {
+      const animItem = animItems[index];
+      const animItemHeigth = animItem.offsetHeight;
+      const animItemOffset = animItem.getBoundingClientRect().top + scrollY;
+      const animStart = 4;
+
+      let animItemPoint = window.innerHeight - animItemHeigth / animStart;
+
+      if (animItemHeigth > window.innerHeight) {
+        animItemPoint = window.innerHeight - window.innerHeight / animStart;
+      }
+
+      if (
+        scrollY > animItemOffset - animItemPoint &&
+        scrollY < animItemOffset + animItemHeigth
+      ) {
+        animItem.classList.add("_active");
+      } else {
+        if (!animItem.classList.contains("_anim-no-hide"))
+          // не прятать после прокрутки
+          animItem.classList.remove("_active");
+      }
+    }
+  }
+  setTimeout(() => {
+    animOnScroll();
+  }, 400);
+}
+//============animation end===========================================================
 //============fetch start=========================================================
 async function loadData() {
   const server = "https://explorer-api.ecredits.com/stats";

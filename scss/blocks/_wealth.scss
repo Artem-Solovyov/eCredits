@@ -42,6 +42,13 @@
         @media (max-width: em(992)) {
             margin-right: 0;
         }
+        transform: translate(0px, rem(100));
+        opacity: 0;
+        transition: transform 1s ease 0s;
+        &._active {
+            opacity: 1;
+            transform: translate(0px, 0px);
+        }
     }
     &__title_2 {
         &:not(:last-child) {
