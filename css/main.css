@@ -869,7 +869,7 @@ html.dark .nav__link {
 }
 @media (max-width: 48em) {
   .dark .menu__body {
-    box-shadow: 0 200px #000;
+    box-shadow: 0 200px #1c1f25;
     background-color: #1c1f25;
   }
   .dark .menu__body .header__theme {
