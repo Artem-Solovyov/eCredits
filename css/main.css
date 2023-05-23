@@ -767,6 +767,9 @@ html.dark .nav__link {
 .menu__link {
   font-size: 2rem;
 }
+.menu__body {
+  position: relative;
+}
 @media (max-width: 48em) {
   .menu__body {
     position: fixed;
@@ -783,6 +786,7 @@ html.dark .nav__link {
     flex-direction: column;
     align-items: center;
     font-size: 1rem;
+    box-shadow: 0 200px #fff;
   }
 }
 @media (max-width: 48em) and (max-width: 20em) {
@@ -799,7 +803,7 @@ html.dark .nav__link {
 }
 @media (max-width: 48em) {
   .menu__body .header__theme {
-    padding: 1rem 0;
+    padding: 0.875rem 0;
     font-weight: 700;
     line-height: 1.2;
     font-family: "Abro Sans";
@@ -865,6 +869,7 @@ html.dark .nav__link {
 }
 @media (max-width: 48em) {
   .dark .menu__body {
+    box-shadow: 0 200px #000;
     background-color: #1c1f25;
   }
   .dark .menu__body .header__theme {
