@@ -736,7 +736,6 @@ html.dark .nav__link {
 
 .menu {
   position: relative;
-  overflow: hidden;
 }
 @media (max-width: 48em) {
   .menu {
