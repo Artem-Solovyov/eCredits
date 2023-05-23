@@ -322,7 +322,7 @@
                 }
             }
             .dark & {
-                box-shadow: 0 200px #000;
+                box-shadow: 0 200px $mainDarkColor;
                 background-color: $mainDarkColor;
                 & .header__theme {
                     display: flex;
