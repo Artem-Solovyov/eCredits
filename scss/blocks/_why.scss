@@ -80,7 +80,7 @@
         z-index: 10;
         font-family: "Cascadia Code";
         @include adaptive-value("font-size", 16, 14, 1, 768);
-
+        font-weight: 300;
         line-height: 1.4;
     }
 

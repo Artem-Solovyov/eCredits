@@ -105,6 +105,7 @@
     &__text {
         font-family: "Cascadia Code";
         font-weight: 300;
+
         padding: 0 rem(50) rem(16) rem(8);
         @include adaptive-value("font-size", 16, 14, 1, 768);
         line-height: 1.4;

@@ -289,7 +289,7 @@ select {
 
 body {
   font-family: "Abro Sans";
-  font-weight: normal;
+  font-weight: 400;
   font-size: 1rem;
   color: #1c1f25;
   overflow-x: hidden;
@@ -1832,6 +1832,7 @@ html.dark .item-why {
   z-index: 10;
   font-family: "Cascadia Code";
   font-size: 1rem;
+  font-weight: 300;
   line-height: 1.4;
 }
 @media (max-width: 48em) {
