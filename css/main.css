@@ -2875,6 +2875,10 @@ html.dark .item-use::before {
   justify-content: center;
 }
 
+.swiper-slide {
+  height: auto;
+}
+
 .dark .swiper-pagination-bullet {
   background: #fff;
   opacity: 1;

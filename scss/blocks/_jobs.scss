@@ -75,6 +75,9 @@
         justify-content: center;
     }
 }
+.swiper-slide {
+    height: auto;
+}
 .swiper-pagination-bullet {
     .dark & {
         background: #fff;

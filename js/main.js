@@ -54,7 +54,10 @@ if (isMobile.any()) {
     .querySelector(".nav__item_click")
     .addEventListener("click", function (e) {
       e.preventDefault();
-      document.querySelector(".nav__item_click").classList.toggle("_active");
+      document
+        .querySelector(".nav__item")
+
+        .classList.toggle("_active");
     });
 }
 // ibg image
