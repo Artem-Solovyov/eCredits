@@ -1460,6 +1460,11 @@ html.light .wealth {
   }
 }
 .wealth__body {
+  min-height: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   position: relative;
   z-index: 4;
   max-width: 36.25rem;
@@ -1499,7 +1504,7 @@ html.light .wealth {
   height: 3.875rem;
 }
 .wealth__title_2:not(:last-child) {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5625rem;
 }
 @media (max-width: 48em) {
   .wealth__title_2 {
@@ -2932,6 +2937,9 @@ html.dark .item-use::before {
   position: relative;
 }
 .company__container {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
   padding-top: 11.25rem;
   padding-bottom: 11.25rem;
   display: flex;
@@ -2999,6 +3007,7 @@ html.dark .item-use::before {
   transform: translate(0px, 0px);
 }
 .company__block {
+  pointer-events: all;
   display: flex;
   column-gap: 1rem;
 }
@@ -3013,6 +3022,10 @@ html.dark .item-use::before {
                 0.5rem + 8 * ((100vw - 48rem) / 512)
             );
   }
+}
+.company__item-rocksolid {
+  position: relative;
+  z-index: 100;
 }
 .company__item-rocksolid::after {
   content: "";

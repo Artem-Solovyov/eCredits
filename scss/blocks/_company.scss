@@ -4,7 +4,11 @@
 }
 .company {
     position: relative;
+
     &__container {
+        position: relative;
+        z-index: 2;
+        pointer-events: none;
         @include adaptive-value("padding-top", 180, 60, 1);
         @include adaptive-value("padding-bottom", 180, 60, 1);
         display: flex;
@@ -36,11 +40,15 @@
     }
 
     &__block {
+        pointer-events: all;
         display: flex;
         @include adaptive-value("column-gap", 16, 8, 1, 768);
     }
 
     &__item-rocksolid {
+        position: relative;
+        z-index: 100;
+
         &::after {
             content: "";
             display: block;

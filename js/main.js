@@ -475,6 +475,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   // submit form
                   document.querySelector(".callback").classList.remove("open");
                   form.classList.remove("_sending");
+                  body.classList.remove("lock");
                 } else {
                   form.classList.remove("_sending");
                 }
@@ -491,6 +492,7 @@ document.addEventListener("DOMContentLoaded", function () {
       //   let result = await response.json();
       //   alert(result.message);
       //   document.querySelector(".callback").classList.remove("open");
+      // body.classList.remove("lock");
       //   form.classList.remove("_sending");
       // } else {
       //   alert("Error");
