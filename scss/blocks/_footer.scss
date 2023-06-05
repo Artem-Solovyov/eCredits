@@ -17,11 +17,11 @@
         align-items: center;
         justify-content: space-between;
 
-        @media (max-width: em(1030)) and (min-width: em(541)) {
+        @media (max-width: em(1170)) and (min-width: em(740)) {
             flex-direction: column;
             @include adaptive-value("row-gap", 24, 16, 1, 320, 768);
         }
-        @media (max-width: em(540)) {
+        @media (max-width: em(740)) {
             align-items: flex-start;
             flex-direction: column;
             row-gap: rem(16);
@@ -41,10 +41,10 @@
         color: #fff;
         display: flex;
         column-gap: rem(32);
-        @media (max-width: em(1030)) and (min-width: em(541)) {
+        @media (max-width: em(1030)) and (min-width: em(741)) {
             @include adaptive-value("column-gap", 80, 0, 1, 320, 1030);
         }
-        @media (max-width: em(540)) {
+        @media (max-width: em(740)) {
             align-items: flex-start;
             flex-direction: column;
             row-gap: rem(16);
